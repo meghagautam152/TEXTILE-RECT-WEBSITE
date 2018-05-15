@@ -1,0 +1,17 @@
+.protect{
+  background-image:url('../../../images/protectbanner.png')
+}
+@media (max-width: 768px){
+  .protect{
+    background-image:url('../../../images/protectmobile.png');
+  }
+
+}
+@media (min-width: 768px){
+  .productssec{
+    background-image:url('../../../images/productsback.png')!important;
+  }
+  }
+.productssec{
+  background-image:url('../../../images/back2ban.png')!important;
+}

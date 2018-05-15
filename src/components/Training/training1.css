@@ -1,0 +1,89 @@
+
+@media (max-width: 768px){
+  .training1{
+    background-image:url('../../images/strategicmobile.png');
+  }
+  .trainfirstsec{
+    background-image:url('../../images/back2ban.png')!important;
+   
+  }
+  .trainsec2 {
+    border-radius: 5px;
+    width: 140px;
+    height: 160px;
+    border: 1px solid #ffffffa8;
+    margin: 0px 15px 0px 15px !important;
+    padding: 30px 5px 14px 5px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 4px 3px 20px 0px #888888;
+    box-shadow: 0px 0px 8px 0px #b0e2e6;
+  
+  }
+  .traintext{
+    
+       font-size:16px;
+       font-weight:600;
+       color:rgb(44, 44, 44);
+       font-family:'lato',sans-serif;
+      
+       padding:4px 10px;
+     
+   
+   }
+   .trainrow{
+    padding-top:50px;
+  }
+}
+@media(min-width: 768px){
+  .training1{
+    background-image:url('../../images/Training1.png');
+  }
+  #features
+  {background-image:url('../../images/home2back.png');
+  }
+  
+ 
+  .dialoguetext{
+    padding-left:20px;
+  }
+  .car1{
+    height:94vh;
+  }
+  .trainfirstsec{
+    background-image:url('../../images/home2back.png');
+   
+  }
+  
+  .dialoguetext {
+    font-family: 'Lato', sans-serif;
+    color: #888888;
+    font-size:19px;
+   
+  }
+  .trainsec2 {
+    border-radius: 5px;
+    width: 160px;
+    height: 150px;
+    border: 1px solid #ffffffa8;
+    margin: 0px 0px 0px 39px;
+    padding: 30px 5px 14px 5px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 4px 3px 20px 0px #888888;
+    box-shadow: 0px 0px 8px 0px #b0e2e6;
+  
+  }
+  .trainrow{
+    padding-top:50px;
+  }
+  
+  .traicons{
+    transition:all 0.3s  ease;
+    transform:scale(0.9);
+   
+    
+  }
+  .trainsec2:hover .traicons{
+   
+    transform:scale(1);
+  }}
+

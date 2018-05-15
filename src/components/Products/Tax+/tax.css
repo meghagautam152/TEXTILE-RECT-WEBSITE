@@ -1,0 +1,18 @@
+.tax {
+  background-image: url('../../../images/taxbanner.png')
+}
+@media (max-width: 768px){
+  .tax{
+    background-image:url('../../../images/taxmobile.png');
+  }
+
+}
+.productssec{
+  background-image:url('../../../images/back2ban.png')!important;
+}
+
+@media (min-width: 768px){
+  .productssec{
+    background-image:url('../../../images/productsback.png')!important;
+  }
+  }

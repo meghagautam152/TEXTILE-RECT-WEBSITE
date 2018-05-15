@@ -1,0 +1,27 @@
+.incorporate{
+  background-image: url('../../../images/incorporate.png');
+  
+}
+@media (max-width: 768px){
+  .incorporate{
+    background-image:url('../../../images/incorporatemobile.png');
+  }
+  .productssec{
+    background-image:url('../../../images/back2ban.png')!important;
+    
+  }
+
+}
+
+@media (min-width: 768px){
+  .productssec{
+    background-image:url('../../../images/productsback.png')!important;
+  }
+  }
+.submitbutton{
+  width:334px; background-color:#f7e92a; border:none;color:#333231}
+
+  .mainbody {
+    padding-top: 44px;
+    overflow-x: hidden;
+  }

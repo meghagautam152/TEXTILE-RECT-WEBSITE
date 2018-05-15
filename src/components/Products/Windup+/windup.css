@@ -1,0 +1,63 @@
+.windup{
+  background-image: url('../../../images/windbanner.png');
+}
+@media (max-width: 768px){
+  .windup{
+    background-image:url('../../../images/mobileproducts.png');
+  }
+
+}
+@media (min-width: 768px){
+  .productssec{
+    background-image:url('../../../images/productsback.png')!important;
+  }
+  }
+
+
+.productssec{
+  background-image:url('../../../images/back2ban.png')!important;
+}
+.submitbutton{
+  width:334px; background-color:#f7e92a; border:none;color:#333231}
+  
+  .active1{
+    background-color: #0099ff00;
+    color:#0a0a0a;
+    margin-right:10px;
+   
+  }
+
+  .show{
+    display:block;
+  }
+  .hide{
+    display:none;
+  }
+
+ li:onhover{
+   cursor:pointer;
+ }
+ .modaltab{
+   font-size:16px;
+   margin-right:10px;
+ }
+ .modaltab:hover{
+   cursor:pointer;
+ }
+ .modaltab:active{
+   color:blue;
+ }
+
+ .modaltext{
+   font-size:16px;
+   color:#414141;
+   font-weight:400;
+   
+ }
+ .modalcontent{
+  font-size:14px;
+
+}
+#2{
+  padding-top:50px;
+}

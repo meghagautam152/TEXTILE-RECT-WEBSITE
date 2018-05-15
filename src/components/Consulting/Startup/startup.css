@@ -1,0 +1,40 @@
+.startup{
+  background-image: url('../../../images/starbanner.png');
+}
+@media (max-width: 768px){
+  .startup{
+    background-image:url('../../../images/startmobile.png');
+  }
+  #whatweoffer {
+    background-image:none !important;
+
+    background-color:#7bdaff !important;
+    padding: 30px 20px 5px 20px;
+  }
+  .heading{
+    color:rgb(51, 51, 51);
+  }
+  .mainrow{
+    margin-top:340px;
+    margin-left:20px;
+  }
+}
+.textsocial{
+  font-size:16px;
+  font-weight:600;
+  color:rgb(54, 54, 54);
+  font-family:'lato',sans-serif;
+  padding-top:10px;
+
+}
+#whatweoffer {
+  background-image:url('../../../images/home2back.png');
+  padding: 30px 20px 5px 20px;
+}
+
+.dialoguetext {
+  font-family: 'Lato', sans-serif;
+  color: #888888;
+  font-size:19px;
+ 
+}

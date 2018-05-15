@@ -1,0 +1,31 @@
+.dialogue1
+{ padding:10px 10px 0px 10px;
+  border:8px solid white;
+  background-color:rgb(255, 255, 255);
+  width:320px;
+  border-radius:1px;
+  margin-bottom:50px;
+  margin-top:50px;
+  margin-right:-45px;
+  box-shadow: 4px 4px 11px 0px #0a0a0a;
+
+ }
+
+ .submitbutton{
+   width:334px; background-color:#f7e92a; border:none;color:#333231}
+
+
+   .pop-up .rodal-dialog{
+
+    background: rgba(0, 142, 190, 0.849);
+
+   }
+
+
+   .pop-up .rodal-dialog div{
+     padding: 15px;
+   }
+
+   .pop-up .rodal-dialog div p{
+    color: #fff;
+  }

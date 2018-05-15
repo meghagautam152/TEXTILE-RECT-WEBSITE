@@ -1,0 +1,14 @@
+.list-sitemap li{
+list-style: none;
+color: #1E1E1E !important;
+}
+
+.site-heading{
+
+    padding: 5px;
+
+}
+
+.sitemap{
+    padding-top:80px;
+}

@@ -1,0 +1,95 @@
+
+@media (max-width: 768px){
+  .training{
+    background-image:url('../../images/functionalmobile.png');
+  }
+
+  .trainfirstsec{
+    background-image:url('../../images/back2ban.png')!important;
+   
+  }
+  .trainsec2 {
+    border-radius: 5px;
+    width:auto;
+    height: auto;
+    border: 1px solid #ffffffa8;
+    margin: 0px 25px 0px 25px !important;
+    padding: 30px 0px 14px 0px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 4px 3px 20px 0px #888888;
+    box-shadow: 0px 0px 8px 0px #b0e2e6;
+  }
+  .trainsec2:hover .traicons{
+    
+     transform:scale(1);
+   }
+   .mysec1 {
+    padding: 0px 0px 50px 0px;
+  }
+  .trainrow{
+    padding-top:60px;
+   margin-left:1px;
+  }
+  
+}
+  @media (min-width:768px){
+    .training{
+      background-image:url('../../images/training.png');
+    }
+    #features
+    {background-image:url('../../images/home2back.png');
+    }
+    
+    .car1{
+      height:94vh;
+    }
+    
+    .traintext{
+     
+        font-size:16px;
+        font-weight:600;
+        color:rgb(44, 44, 44);
+        font-family:'lato',sans-serif;
+       
+        padding:4px 10px;
+      
+    
+    }
+    .trainfirstsec{
+      background-image:url('../../images/home2back.png');
+     
+    }
+    
+    .dialoguetext {
+      font-family: 'Lato', sans-serif;
+      color: #888888;
+      font-size:19px;
+     
+    }
+    .trainsec2 {
+      border-radius: 5px;
+      width: 160px;
+      height: 150px;
+      border: 1px solid #ffffffa8;
+      margin: 0px 0px 0px 39px;
+      padding: 30px 5px 14px 5px;
+      background-color: #ffffff;
+      -webkit-box-shadow: 4px 3px 20px 0px #888888;
+      box-shadow: 0px 0px 8px 0px #b0e2e6;
+    }
+    
+    .trainrow{
+      padding-top:50px;
+    }
+    
+    .traicons{
+      transition:all 0.3s  ease;
+      transform:scale(0.9);
+     
+      
+    }
+    .trainsec2:hover .traicons{
+     
+      transform:scale(1);
+    }
+  }

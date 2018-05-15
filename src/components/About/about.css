@@ -1,0 +1,25 @@
+.about{
+  background-image:url('../../images/aboutus2.png');
+ 
+}
+@media (max-width: 768px){
+  .about{
+    background-image:url('../../images/aboutus3.png');
+  }
+  #ourmission{
+    background-image: url('../../images/our-mission2.png')!important;
+    padding:10px 10px 40px 10px !important;margin:10px 0px !important;
+  }
+  
+  
+
+}
+#ourmission{
+  background-image: url('../../images/our-mission.png');
+  padding:30px 70px;margin:40px 0px;
+}
+.abouttext{
+  font-size:18px;
+  color:#2e2e2e;
+  font-weight:400;
+}

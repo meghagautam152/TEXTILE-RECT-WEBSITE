@@ -1,0 +1,51 @@
+.platforms {
+  background-image: url('../../images/platform.png');
+}
+@media (max-width: 768px){
+  .platforms{
+    background-image:url('../../images/platformmobile.png');
+  }
+  .oppobanner{
+    background-image:url('../../images/opporbannermobile2.png') !important;
+   
+  }
+  .oppobanner1:hover .opposec{
+    transform:scale(1.1);
+  }
+  .opposec {
+    font-size: 34px !important;
+    font-family: 'Showcard gothic', sans-serif;
+    font-weight: 600;
+    color: #383838e5 !important;
+    margin-left: 0px !important;
+    margin-top: 60px !important;
+    transition:all 0.3s ease;
+  }
+}
+
+.opposec {
+  font-size: 45px;
+  font-family: 'Showcard gothic', sans-serif;
+  font-weight: 600;
+  color: #88ff00;
+  margin-left: 89px;
+  margin-top: 30px;
+  transition:all 0.3s ease;
+}
+
+.oppobanner:hover .opposec{
+  transform:scale(1.1);
+}
+
+.oppobanner{
+  background-image:url('../../images/opporbanner.png');
+  margin:50px 0px;
+}
+
+.dialoguetext {
+  font-family: 'Lato', sans-serif;
+  color: #999999;
+  font-size:15px;
+  font-weight:500;
+ 
+}

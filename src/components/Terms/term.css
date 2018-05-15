@@ -1,0 +1,26 @@
+@media (min-width: 768px){
+  .terms{
+  background-image:url('../../images/termsbanner.png');
+  height:70px !important;}
+  .carousel-item{
+    min-height:190px;}
+     
+
+}
+@media (max-width: 768px){
+  .terms{
+    background-image:url('../../images/termsbanner.png');
+    height:40px !important;
+  }
+ .carousel-item{
+ min-height:170px;}
+  
+  
+
+}
+
+.abouttext{
+  font-size:18px;
+  color:#2e2e2e;
+  font-weight:400;
+}
