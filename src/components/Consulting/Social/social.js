@@ -131,12 +131,12 @@ hide9() {
           <div className="container textblock1 ">
           <div className="row mainrow big">
           <div className="col-lg-3"></div>
-          <div className="col-lg-6"><Link to="consulting/social/request-a-quote"><button type="button" className="button13"><h3 className="heading15">Post a Job and Get a Proposal</h3></button></Link></div>
+          <div className="col-lg-6"><Link to="/consulting/social/request-a-proposal"><button type="button" className="button13"><h3 className="heading15">Post a Job and Get a Proposal</h3></button></Link></div>
           <div className="col-lg-3"></div>
           </div>
           <div className="row mainrow mobile">
           <div className="col-lg-3 col-1"></div>
-          <div className="col-lg-6 col-7"><Link to="consulting/social/request-a-quote"><button type="button" className="button13"><h3 className="heading15">Post a Job and Get a Proposal</h3></button></Link></div>
+          <div className="col-lg-6 col-7"><Link to="/consulting/social/request-a-proposal"><button type="button" className="button13"><h3 className="heading15">Post a Job and Get a Proposal</h3></button></Link></div>
           <div className="col-lg-3 col-2"></div>
           </div>
           </div>

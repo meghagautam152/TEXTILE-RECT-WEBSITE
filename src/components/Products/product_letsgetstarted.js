@@ -414,11 +414,9 @@ validate(data) {
             id="typeOfEntity"
             name = "typeofEntity"
             placeholder="Type of entity"
-            value={typeOfEntity}
-            onChange={this.onChange}
             
           >
-            <option>Privated Limited Company</option>
+            <option>Private Limited Company</option>
             <option>Public limited Company</option>
             <option>One Person Company</option>
             <option>Limited Liability Partnership</option>

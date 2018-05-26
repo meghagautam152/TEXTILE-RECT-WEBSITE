@@ -147,11 +147,10 @@ export default class NavbarMain extends Component {
        </div>
        </li>
        <li className="nav-item dropdown">
-       <a className="nav-link dropdown-toggle" href="#" id="consulting-toggle" role="button" data-toggle="dropdown">Platforms</a>
+       <a className="nav-link dropdown-toggle" href="#" id="consulting-toggle" role="button" data-toggle="dropdown">Trainings</a>
        <div className="dropdown-menu dropdown-menu-left dropdown-content" arealabelledby="consulting-toggle">
-         <Link className="dropdown-item navmain-item" to="/platforms"><img src={require("../../images/N18.png")} style={{marginRight:'10px'}}/>Opportuneety<h5 className="subtitles"> Your go to place to explore opportunities
-</h5></Link>
-        
+         <Link className="dropdown-item navmain-item" to="/trainings/functional"><img src={require("../../images/N17.png")} style={{marginRight:'10px'}}/>Functional Training<h5 className="subtitles">Develop comprehensive understanding about running a business</h5></Link>
+         <Link className="dropdown-item navmain-item" to="/trainings/strategic"><img src={require("../../images/N16.png")} style={{marginRight:'10px'}}/>Strategic Training<h5 className="subtitles">Unleash strategies to accelerate from idea to ideal</h5></Link>
          
 
        </div>

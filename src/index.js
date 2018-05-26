@@ -45,10 +45,10 @@ ReactDOM.render(<BrowserRouter>
   <Switch>
   <Route exact path = "/platforms" component = {Platforms} />
   <Route exact path = "/terms-and-conditions" component = {Termsandconditions} />
-  <Route exact path = "/privacy-terms" component = {Privacyterms} />
-  <Route exact path = "/confidentiality-terms" component = {Confidentialityterms} />
-  <Route exact path = "/disclaimer-terms" component = {Disclaimerterms} />
-  <Route exact path = "/privacy-terms" component = {Privacyterms} />
+  <Route exact path = "/privacy-policy" component = {Privacyterms} />
+  <Route exact path = "/confidentiality-policy" component = {Confidentialityterms} />
+  <Route exact path = "/disclaimer-policy" component = {Disclaimerterms} />
+  <Route exact path = "/privacy-policy" component = {Privacyterms} />
   <Route exact path = "/trainings/strategic" component = {Strategic} />
   <Route exact path = "/trainings/functional" component = {Functional} />
   <Route path = "/:url/requestquote" component ={RequestQuote} />

@@ -116,22 +116,34 @@ export default class TrainingNavbar extends Component {
               <div>
                   <ul className="navbar-nav ml-auto" id="menu">
                       <li className="nav-item">
-                          <Link className="nav-link" to ={`/${this.props.url!=undefined ? this.props.url :''}`}>
-                          {(this.props.sqhide === "hide")?
-                              "Our Platforms" : "Trainings"
-                        }</Link>
-                      </li>
+                      {this.props.type=="send-a-query" ?   <Link className="nav-link" to ={`../../trainings/${this.props.url}`}>
+                      {(this.props.sqhide === "hide")?
+                          "Our Platforms" : "Trainings"
+                      }</Link> :   <Link className="nav-link" to ={`./${this.props.url}`}>
+                      {(this.props.sqhide === "hide")?
+                          "Our Platforms" : "Trainings"
+                      }</Link>}
+                                            
+                                              
+                                            </li>
 
-                    {
-                      (this.props.sqhide!=="hide")?(<li className="nav-item">
-                          <Link className="nav-link" to={`../trainings/${this.props.url}/send-a-query`}>Send a query</Link>
-                      </li>):null
+                      { this.props.type == "send-a-query" ? 
+                      ((this.props.sqhide!=="hide")?(<li className="nav-item">
+                          <Link className="nav-link" to={`./send-a-query`}>Send a query</Link>
+                      </li>):null) :
+                        (this.props.sqhide!=="hide")?(<li className="nav-item">
+                        <Link className="nav-link" to={`../trainings/${this.props.url}/send-a-query`}>Send a query</Link>
+                    </li>):null
                     }
 
-                    {
-                      (this.props.rqhide!=="hide")?(<li className="nav-item">
-                        <Link className="nav-link" to ={`../trainings/${this.props.url}/request-a-proposal`}>Request a Proposal</Link>
-                    </li>):null
+                    { this.props.type =="send-a-query" ? 
+                      ((this.props.rqhide!=="hide")?(<li className="nav-item">
+                        <Link className="nav-link" to ={`../../trainings/${this.props.url}/request-a-proposal`}>Request a Proposal</Link>
+                    </li>):null) 
+                    :(this.props.rqhide!=="hide")?(<li className="nav-item">
+                    <Link className="nav-link" to ={`../trainings/${this.props.url}/request-a-proposal`}>Request a Proposal</Link>
+                </li>):null
+
                   }
 
                       <li className="nav-item">

@@ -130,7 +130,7 @@ toggleMenu(state,menu){
  <div id="mySidenav" style={this.props.stateOpen ? open : close} className="sidenav">
     <a href="javascript:void(0)" className="back" onClick={ () => this.props.closeMenu(this.props.stateOpen) } className="closebtn"><img className="back-arrow" src={require("../../images/barrow.png")}/></a> <Link to="/" className="title-menu" value="productsMenu">VALUE PLUS</Link>
     <a href="javascript:void(0)" value="productsMenu" onClick={ () => this.toggleMenu(this.state.products,"products") } id="product" ><img src={require("../../images/h2.png")} style={{marginRight:'10px'}}/>Products </a>
-    <a href="javascript:void(0)" value="consultationMenu" onClick={ () => this.toggleMenu(this.state.consulting,"consulting") } id="consultation"><img src={require("../../images/h1.png")} style={{marginRight:'10px'}}/>Consultings</a>
+    <a href="javascript:void(0)" value="consultationMenu" onClick={ () => this.toggleMenu(this.state.consulting,"consulting") } id="consultation"><img src={require("../../images/h1.png")} style={{marginRight:'10px'}}/>Consulting</a>
     <a href="javascript:void(0)" value="productmarketmenu" onClick={ () => this.toggleMenu(this.state.traning,"traning") } id="productmarket"><img src={require("../../images/h3.png")} style={{marginRight:'10px'}}/>Trainings</a>
     <a href="javascript:void(0)" value="platformMenu" onClick={ () => this.toggleMenu(this.state.platforms,"platforms") }  id="platform"><img src={require("../../images/h4.png")} style={{marginRight:'10px'}}/>Platforms</a>
     <Link to="./about" id="about" className="heading3"><img src={require("../../images/h5.png")} style={{marginRight:'10px'}}/>About Us</Link>
@@ -187,7 +187,7 @@ toggleMenu(state,menu){
      <Link to="./request-a-quote">Request a Proposal</Link> :
      <Link to="../trainings/strategic/request-a-quote">Request a Proposal</Link>}
 
-     <Link to="../contact">Contact us</Link>
+     <Link to="../contact-us">Contact us</Link>
 
   </div>
   <div id="productmarketmenu" style={this.state.functionaltraining ? open : close} class="sidenav">
@@ -204,7 +204,7 @@ toggleMenu(state,menu){
      <Link to="./request-a-quote">Request a Proposal</Link> :
      <Link to="../trainings/functional/request-a-quote">Request a Proposal</Link>}
 
-     <Link to="../contact">Contact us</Link>
+     <Link to="../contact-us">Contact us</Link>
 
   </div>
 
@@ -238,7 +238,7 @@ toggleMenu(state,menu){
    <Link className="nav-link" to={`../../product/incorporate+/send-a-query`}>Send a query</Link>
   }
 
-  <Link to="../contact">Contact us</Link>
+  <Link to="../contact-us">Contact us</Link>
 
   </div>
 
@@ -263,7 +263,7 @@ toggleMenu(state,menu){
    <Link className="nav-link" to={`../../product/comply+/send-a-query`}>Send a query</Link>
   }
 
-  <Link to="../contact">Contact us</Link>
+  <Link to="../contact-us">Contact us</Link>
     </div>
 
 <div style={this.state.tax ? open : close} class="sidenav">
@@ -286,7 +286,7 @@ toggleMenu(state,menu){
    <Link className="nav-link" to={`../../product/tax+/send-a-query`}>Send a query</Link>
   }
 
-  <Link to="../contact">Contact us</Link>
+  <Link to="../contact-us">Contact us</Link>
 </div>
 
 <div style={this.state.protect ? open : close} class="sidenav">
@@ -309,7 +309,7 @@ toggleMenu(state,menu){
    <Link className="nav-link" to={`../../product/protect+/send-a-query`}>Send a query</Link>
   }
 
-  <Link to="../contact">Contact us</Link>
+  <Link to="../contact-us">Contact us</Link>
     </div>
     <div style={this.state.windup ? open : close} class="sidenav">
   <a href="javascript:void(0)" className="back" onClick={ () => this.toggleMenu(this.state.windup,"windup") } className="closebtn"><img className="back-arrow" src={require("../../images/barrow.png")}/></a> <Link to="/" className="title-menu" value="productsMenu">Wind up +</Link>
@@ -331,7 +331,7 @@ toggleMenu(state,menu){
    <Link className="nav-link" to={`../../product/windup+/send-a-query`}>Send a query</Link>
   }
 
-  <Link to="../contact">Contact us</Link>
+  <Link to="../contact-us">Contact us</Link>
     </div>
 
 
@@ -340,7 +340,7 @@ toggleMenu(state,menu){
 <a href="javascript:void(0)" className="back" onClick={ () => this.toggleMenu(this.state.corporateConsulting,"corporateConsulting") } className="closebtn"><img className="back-arrow" src={require("../../images/barrow.png")}/></a> <Link to="/" className="title-menu" value="productsMenu">Corporate Consulting</Link>
 
 {this.props.type=="send-a-query" ?   <Link className="nav-link" to ={`../../consulting/${this.props.url}`}>
-Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
+Consultings</Link> :  <Link to="../consulting/corporate">Consulting</Link> }
       
 { this.props.type == "send-a-query" ? 
                      
@@ -360,7 +360,7 @@ Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
            
 
                   }
-       <Link to="../contact">Contact us</Link>
+       <Link to="../contact-us">Contact us</Link>
 
 
   </div>
@@ -370,7 +370,7 @@ Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
 
         
 {this.props.type=="send-a-query" ?   <Link className="nav-link" to ={`../../consulting/${this.props.url}`}>
-Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
+Consultings</Link> :  <Link to="../consulting/corporate">Consulting</Link> }
       
 { this.props.type == "send-a-query" ? 
                      
@@ -390,7 +390,7 @@ Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
            
 
                   }
-       <Link to="../contact">Contact us</Link>
+       <Link to="../contact-us">Contact us</Link>
 
   </div>
 
@@ -399,7 +399,7 @@ Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
 <a href="javascript:void(0)" className="back" onClick={ () => this.toggleMenu(this.state.socialConsulting,"socialConsulting") } className="closebtn"><img className="back-arrow" src={require("../../images/barrow.png")}/></a> <Link to="/" className="title-menu" value="productsMenu">Social Consulting</Link>
 
 {this.props.type=="send-a-query" ?   <Link className="nav-link" to ={`../../consulting/${this.props.url}`}>
-Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
+Consultings</Link> :  <Link to="../consulting/corporate">Consulting</Link> }
       
 { this.props.type == "send-a-query" ? 
                      
@@ -419,7 +419,7 @@ Consultings</Link> :  <Link to="../consulting/corporate">Our Services</Link> }
            
 
                   }
-       <Link to="../contact">Contact us</Link>
+       <Link to="../contact-us">Contact us</Link>
 
   </div>
 
