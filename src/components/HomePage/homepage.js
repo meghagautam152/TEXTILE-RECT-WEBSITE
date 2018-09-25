@@ -8,11 +8,6 @@ import Twitter from './Twitter';
 import Sectionabout from './sectionabout';
 import Counter from './counter';
 import $ from 'jquery';
-import Facebook from './Facebook';
-
-
-import ProductSection from './ProductSection';
-
 import ProductMegaSidebar from '../MegaSidebar/ProductMegaSidebar';
 import ServicesMegaSidebar from '../MegaSidebar/ServicesMegaSidebar';
 
