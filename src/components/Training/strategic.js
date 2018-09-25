@@ -255,7 +255,7 @@ export default class Strategic extends Component {
           <div className="row  ">
             <div className="col-lg-5 text-center trainsec1">
 
-              <h2 className="heading1">Learning not Training</h2>
+              <h2 className="heading64">Learning not Training</h2>
               <h6 className="content1">We focus on the context of the participant, rather than simply instructing or telling them about concepts and theories.
 
                                   </h6>
@@ -263,7 +263,7 @@ export default class Strategic extends Component {
             <div className="col-lg-2"></div>
             <div className="col-lg-5 text-center trainsec1" >
 
-              <h2 className="heading1">Tutoring and Facilitation</h2>
+              <h2 className="heading64">Tutoring and Facilitation</h2>
               <h6 className="content1">We create learning environment where participants can bond with their peers to build each other’s experience and strengths.
                                   </h6>
             </div>
@@ -272,7 +272,7 @@ export default class Strategic extends Component {
           <div className="row ">
             <div className="col-lg-5 text-center trainsec1" >
 
-              <h2 className="heading1">Programmes not Courses</h2>
+              <h2 className="heading64">Programmes not Courses</h2>
               <h6 className="content1">Courses are a fixed entity, whereas we provide programmes that are a collection of modules and experiences responsive to learner’s needs.
 
 
@@ -282,7 +282,7 @@ export default class Strategic extends Component {
             <div className="col-lg-2"></div>
             <div className="col-lg-5 text-center trainsec1" >
 
-              <h2 className="heading1">Learning and Development</h2>
+              <h2 className="heading64">Learning and Development</h2>
               <h6 className="content1"> We are part of a workplace process of continuous improvement that is practical and applied, rather than a formal education structure.
 
                                       </h6>

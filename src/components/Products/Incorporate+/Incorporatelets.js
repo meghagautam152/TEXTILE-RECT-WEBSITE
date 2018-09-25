@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from "react";
 import $ from "jquery";
 import _ from "underscore";
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css'
+import InlineError from "../../inlineerror";
+import validator from "validator";
 
 export default class Incorporatelets extends Component {
   constructor(props) {
@@ -186,9 +190,11 @@ export default class Incorporatelets extends Component {
       typeOfEntity: "Privated Limited Company",
       pc: "",
       success: false,
-      category:[]
+      category:[],
+      errors: {}    
     };
     this.submitForm = this.submitForm.bind(this);
+    
   }
   componentDidMount() {
     let category = _.where(this.state.productCategory, {
@@ -197,16 +203,85 @@ export default class Incorporatelets extends Component {
     this.setState({ category });
     
   }
+  validate(data) {
+    const errors = {};
+    if (!data.name) {
+      errors.name = "This field is required";
+    } else if (!validator.isAlpha(data.name)) {
+      errors.name = "Invalid Name";
+    }
+    if (!data.email) {
+      errors.email = "This field is required";
+    } else if (!validator.isEmail(data.email)) {
+      errors.email = "Invalid Email";
+    }
+    if (!data.phone) {
+      errors.phone = "This field is required";
+    } else if (!validator.isMobilePhone(data.phone, "en-IN")) {
+      errors.phone = "Invalid Phone Number";
+    }
+    if (!data.city) {
+      errors.city = "This field is required";
+    } else if (!validator.isAlpha(data.city)) {
+      errors.city = "Invalid City Name";
+    }
+    if(typeof data.productCategory !== "string"){
+      errors.productCategory = "Please select a category";
+    }
+    return errors;
+  }
+
+ /* hasEmptyFields(){
+let anyEmptyField = 0;
+
+    if(this.state.name.length==0){
+      anyEmptyField ++;
+    }
+    if(this.state.city.length==0){
+
+      anyEmptyField++;
+    }
+
+    if(this.state.email.length==0){
+      anyEmptyField++;
+    }
+
+    if(this.state.phone.length == 0){
+
+      anyEmptyField++;
+    }
+
+    if(this.state.typeOfEntity.length==0){
+      anyEmptyField++;
+    }
+
+
+    //if empty fields are 0 then return false else true
+    if(anyEmptyField==0){
+
+      return false;
+
+    }
+    
+    else{
+      return true;
+    }
+
+  }*/
 
   submitForm(e) {
     this.setState({ success: false });
+    const errors = this.validate(this.state);
+    this.setState({ errors });
+    if (Object.keys(errors).length === 0) {
     e.preventDefault();
-    var api = "ficklebeans.com/mail/index.php";
+    var api = "http://ficklebeans.com/mail/index.php";
     $.ajax({
       url: api,
       method: "GET",
       crossOrigin : true,
       data: {
+        productoffer: this.state.productoffer,
         name: this.state.name,
         phone: this.state.phone,
         email: this.state.email,
@@ -222,6 +297,8 @@ export default class Incorporatelets extends Component {
       }.bind(this),
       error: function(xhr, status, err) {}.bind(this)
     });
+  }
+
   }
   onChange = e => {
     // Because we named the inputs to match their corresponding values in state, it's
@@ -243,7 +320,8 @@ export default class Incorporatelets extends Component {
       product,
       productCategory,
       typeOfEntity,
-      phone
+      phone,
+      errors
     } = this.state;
     return (
       <form name="sentMessage" id="contactForm" novalidate>
@@ -265,8 +343,8 @@ export default class Incorporatelets extends Component {
           required
           data-validation-required-message="Please enter your name."
         />
-        <div className="pricestart"><h5 className="prices">Starting from {this.props.price} + Govt Fees + GST@18%</h5></div>
-        
+       
+         <div className="pricestart1"><h5 className="text-center heading18">Let's get started</h5></div>
         <div className="control-group form-group">
         <div className="controls">
         <div className="row"> 
@@ -279,9 +357,10 @@ export default class Incorporatelets extends Component {
                            </select>
      </div>
         <div className="col-md-7">
-     <input type="text" value={name} onChange={this.onChange} className="form-control" name="name" placeholder="Full Name" required data-validation-required-message="Please enter your name." />
-    
+     <input type="text" value={name} onChange={this.onChange} className="form-control" name="name" placeholder="Full Name"  />
+     {errors.name && <InlineError text={errors.name} />}
      </div>
+     
      </div>
            
           <p className="help-block" />
@@ -298,10 +377,12 @@ export default class Incorporatelets extends Component {
               id="email"
               placeholder=" Email Id"
               required
-              data-validation-required-message="Please enter your email address."
-            />
+              data-validation-required-message="Please enter your email."
+            /> {errors.email && <InlineError text={errors.email} />}
           </div>
+         
         </div>
+
         <div className="row">
           <div className="col-lg-6 textfields" >
             <div className="control-group form-group">
@@ -318,7 +399,9 @@ export default class Incorporatelets extends Component {
                   data-validation-required-message="Please enter your phone number."
                 />
               </div>
+              {errors.phone && <InlineError text={errors.phone} />}
             </div>
+
           </div>
           <div className="col-lg-6 textfields">
             <div className="control-group form-group">
@@ -335,49 +418,36 @@ export default class Incorporatelets extends Component {
                   data-validation-required-message="Please enter your city name."
                 />
               </div>
+              {errors.city && <InlineError text={errors.city} />}
             </div>
           </div>
         </div>
        
 
-        <div className="row">
-          <div className="col-lg-8 " >
-            <div className=" control-group form-group">
-              <label for="sel1" className="dialoguetext">
-                Product Category :
-              </label>
-              <select
-                className="form-control"
-                name="productCategory"
-                value={productCategory}
-                onChange={this.onChange}
-              >
-              <option selected>Select Options</option>
-                {this.state.category.map((pc, index) => {
-                  return <option key={index}> {pc.name} </option>;
-                })}
-              </select>
-            </div>
-          </div>
-        </div>
+        
 
-        {this.state.success ? (
+        
+
+          {/*} {this.state.error ? (
           <div id="success">
-            <div class="alert alert-success">
-              <strong>Submitted succesfully!</strong>
+            <div class="alert alert-danger">
+              <strong>Please Fill All the fields</strong>
             </div>{" "}
           </div>
         ) : (
           <div />
-        )}
+        )}*/}
         {/*For success/fail messages */}
         <button
           onClick = {this.submitForm}
           className="btn btn-primary heading6 btn-block button10"
           id="sendMessageButton"
         >
-        Let's get started
+        Submit
         </button>
+       {/* <Rodal visible={this.state.success} height={100} className="pop-up" animation="flip" onClose={this.hide.bind(this)} >
+  <div><p>Thank you! Your response has been recorded, we will get back to you shortly</p></div>
+      </Rodal>*/}
       </form>
     );
   }

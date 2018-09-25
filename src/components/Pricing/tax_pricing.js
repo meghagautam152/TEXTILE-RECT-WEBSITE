@@ -12,7 +12,7 @@ import {
 export default class TaxPricing extends Component {
   render() {
     return (
-      <div className="mainbody">
+      <div className="mainbody1">
         <ProductNavbar subhead="TAX+" url="tax+" priceurl="/products/tax+/pricing" type="pricing"/>
         <div className="container taxpricing" >
           <div className="row">
@@ -130,6 +130,28 @@ export default class TaxPricing extends Component {
               </Accordion>
             </div>
           </div>
+          <div className="row">
+           
+           <div className="col-md-12 col-xs-6">
+             <div className="charitybox">
+             <div className="row ">
+               <div className="col-md-4 charimage">
+               <img src={require("../../images/charity.png")}/>
+                   </div>
+                   <div className="col-md-8">
+                     <h2 className="charityhead">We Care</h2>
+              <h5 className="charitytxt">There are millions who suffer due to lack of healthcare or can only dream of going to school. Value Plus is helping spread some goodness in the world.
+                For every purchase you make, we contribute 5% of our professional fee towards health and education initiatives. </h5>
+
+
+                   </div>
+                   </div>
+
+            </div>
+           </div>
+           <div className="col-md-2 col-xs-6">
+           </div>
+         </div>
         </div>
         <Footer />
       </div>

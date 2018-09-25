@@ -3,6 +3,7 @@
 }
 @media (max-width: 768px){
   .startup{
+    margin-top:150px;
     background-image:url('../../../images/startmobile.png');
   }
   #whatweoffer {

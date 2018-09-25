@@ -89,21 +89,21 @@ export default class Sectionabout extends Component{
       <div class="container">
       <div className="row customers9">
      
-        <div className="col-md-4 col-sm-2 mb-3  imagecorp imgcorp1 text-center">
+        <div className="col-md-4 col-sm-2 mb-3  imagecorp1 imgcorp1 text-center">
           <img className="img-fluid " src={require("../../images/g2.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px' }}><div>Expert & Professionals </div>
           <div>ready to help</div></p>
 
         </div>
        
-        <div className="col-md-4 col-sm-2 mb-3 imagecorp imgcorp2 text-center" ref ="imgcorp2">
+        <div className="col-md-4 col-sm-2 mb-3 imagecorp1 imgcorp2 text-center" ref ="imgcorp2">
           <img className="img-fluid " src={require("../../images/g3.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px'}}><div>20+ years of experience</div> <div> and expertise </div> </p>
            </div>
 
        
        
-        <div className="col-md-4 col-sm-2 mb-3 imagecorp imgcorp3 text-center" ref ="imgcorp3">
+        <div className="col-md-4 col-sm-2 mb-3 imagecorp1 imgcorp3 text-center" ref ="imgcorp3">
           <img className="img-fluid" src={require("../../images/g1.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px', paddingLeft:'5px'}}>Helping your business grow</p>
           

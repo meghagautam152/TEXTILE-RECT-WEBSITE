@@ -12,7 +12,7 @@ import {
 export default class ComplyPricing extends Component {
   render() {
     return (
-      <div className="mainbody">
+      <div className="mainbody1">
         <ProductNavbar
           subhead="COMPLY+"
           url="comply+"
@@ -299,12 +299,11 @@ export default class ComplyPricing extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-2  col-xs-6">
-              </div>
-              <div className="col-md-8 col-xs-6">
+           
+              <div className="col-md-12 col-xs-6">
                 <div className="charitybox">
                 <div className="row ">
-                  <div className="col-md-4">
+                  <div className="col-md-4 charimage">
                   <img src={require("../../images/charity.png")}/>
                       </div>
                       <div className="col-md-8">

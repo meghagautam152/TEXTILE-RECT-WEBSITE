@@ -4,12 +4,14 @@ import "./windup.css";
 import ProductNavbar from "../../ProductNavbar/productnavbar";
 import WhyChoose from "../../WhyChoose/whychoose";
 import HowItWorks from "../HowItWorks/howitworks";
+import FaqFilters from '../../Faq/FaqFilters';
 import Footer from "../../Footer/footer";
 import ProductLGS from "../product_letsgetstarted";
 import Winduplets from "./Winduplets";
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css'
 import Testimonials from '../../Testimonials/testimonials';
+import $ from "jquery";
 
 export default class Windup extends Component {
 
@@ -17,91 +19,190 @@ export default class Windup extends Component {
 
 
 
-  constructor(props) {
-    super(props);
-    this.state = { visible: false, 
-    visible1: false ,
-     visible2: false ,
-    visible3: false ,
-      visible4: false ,
-     visible5: false ,
-   visible6: false ,
-     visible7: false,
-     visible8: false,
-    visible9: false,
-  visible10: false };
-};
-
-show() {
-    this.setState({ visible: true });
+constructor(props) {
+  super();
+  this.handleLine = this.handleLine.bind(this);
+}
+componentDidMount(){
+  this.handleLine();
 }
 
-hide() {
-    this.setState({ visible: false });
-}
-show1() {
-  this.setState({ visible1: true });
+handleLine(){
+  
+  const c1= this.refs.c1;
+  const c2= this.refs.c2;
+  const c3= this.refs.c3;
+  const c4= this.refs.c4;
+  const c5= this.refs.c5;
+  const c6= this.refs.c6;
+  const c7= this.refs.c7;
+  const c8= this.refs.c8;
+  const c9= this.refs.c9;
+  const c10= this.refs.c10;
+  const c11= this.refs.c11;
+  const c12= this.refs.c12;
+  const d1= this.refs.d1;
+  const d2= this.refs.d2;
+  const d3= this.refs.d3;
+  const d4= this.refs.d4;
+  const d5= this.refs.d5;
+  const d6= this.refs.d6;
+  const d7= this.refs.d7;
+  const d8= this.refs.d8;
+  const d9= this.refs.d9;
+  const d10= this.refs.d10;
+  
+
+  $(function(){
+    $("#c1,#d1").hover(function(){
+      $("#d1").css('height', '130px');
+      $("#d1").css('overflow', 'unset');
+      $("#d1-arrow").css({'margin-top':'-10px','left':'25%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d1").css('height', '0px');
+      $("#d1-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d1").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c2,#d2").hover(function(){
+      $("#d2").css('height', '130px');
+      $("#d2").css('overflow', 'unset');
+      $("#d2-arrow").css({'margin-top':'-10px','left':'50%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d2").css('height', '0px');
+      $("#d2-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d2").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c3,#d3").hover(function(){
+      $("#d3").css('height', '130px');
+      $("#d3").css('overflow', 'unset');
+      $("#d3-arrow").css({'margin-top':'-10px','left':'74%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d3").css('height', '0px');
+      $("#d3-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d3").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c4,#d4").hover(function(){
+      $("#d4").css('height', '130px');
+      $("#d4").css('overflow', 'unset');
+      $("#d4-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d4").css('height', '0px');
+      $("#d4-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d4").css('overflow', 'hidden');
+    });
+  });
+
+  $(function(){
+    $("#c5,#d5").hover(function(){
+      $("#d5").css('height', '130px');
+      $("#d5").css('overflow', 'unset');
+      $("#d5-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d5").css('height', '0px');
+      $("#d5-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d5").css('overflow', 'hidden');
+    });
+  });
+  
+  $(function(){
+    $("#c6,#d6").hover(function(){
+      $("#d6").css('height', '130px');
+      $("#d6").css('overflow', 'unset');
+      $("#d6-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d6").css('height', '0px');
+      $("#d6-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d6").css('overflow', 'hidden');
+    });
+  });
+
+  $(function(){
+    $("#c7,#d7").hover(function(){
+      $("#d7").css('height', '130px');
+      $("#d7").css('overflow', 'unset');
+      $("#d7-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d7").css('height', '0px');
+      $("#d7-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d7").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c8,#d8").hover(function(){
+      $("#d8").css('height', '130px');
+      $("#d8").css('overflow', 'unset');
+      $("#d8-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d8").css('height', '0px');
+      $("#d8-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d8").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c9,#d9").hover(function(){
+      $("#d9").css('height', '130px');
+      $("#d9").css('overflow', 'unset');
+      $("#d9-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d9").css('height', '0px');
+      $("#d9-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d9").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c10,#d10").hover(function(){
+      $("#d10").css('height', '130px');
+      $("#d10").css('overflow', 'unset');
+      $("#d10-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d10").css('height', '0px');
+      $("#d10-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d10").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c11,#d11").hover(function(){
+      $("#d11").css('height', '130px');
+      $("#d11").css('overflow', 'unset');
+      $("#d11-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d11").css('height', '0px');
+      $("#d11-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d11").css('overflow', 'hidden');
+    });
+  });
+  $(function(){
+    $("#c12,#d1").hover(function(){
+      $("#d1").css('height', '130px');
+      $("#d1").css('overflow', 'unset');
+      $("#d1-arrow").css({'margin-top':'-10px','left':'6%','opacity':'1'});
+    }, function() {
+      // on mouseout, reset the background colour
+      $("#d1").css('height', '0px');
+      $("#d1-arrow").css({'margin-top':'0px','opacity':'0'});
+      $("#d1").css('overflow', 'hidden');
+    });
+  });
+
 }
 
-hide1() {
-  this.setState({ visible1: false });
-}
-show2() {
-  this.setState({ visible2: true });
-}
-
-hide2() {
-  this.setState({ visible2: false });
-}
-show3() {
-  this.setState({ visible3: true });
-}
-
-hide3() {
-  this.setState({ visible3: false });
-}
-show4() {
-  this.setState({ visible4: true });
-}
-
-hide4() {
-  this.setState({ visible4: false });
-}
-show5() {
-  this.setState({ visible5: true });
-}
-
-hide5() {
-  this.setState({ visible5: false });
-}
-show6() {
-  this.setState({ visible6: true });
-}
-
-hide6() {
-  this.setState({ visible6: false });
-}
-show7() {
-  this.setState({ visible7: true });
-}
-
-hide7() {
-  this.setState({ visible7: false });
-}
-show8() {
-  this.setState({ visible8: true });
-}
-
-hide8() {
-  this.setState({ visible8: false });
-}
-show9() {
-  this.setState({ visible9: true });
-}
-
-hide9() {
-  this.setState({ visible9: false });
-}
   render() {
     return (
       <div className="mainbody">
@@ -113,10 +214,10 @@ hide9() {
         <header>
           <div className="carousel slide" data-ride="carousel" id="1">
             <div className="carousel-inner header">
-              <div className="carousel-item car1 windup active">
+              <div className="carousel-item car5 windup active">
                 <div className="container textblock1">
                   <div className="row ">
-                    <div className="offset-lg-8 col-lg-4 dialogue1">
+                    <div className="offset-lg-8 col-lg-4 dialogue2">
                       <Winduplets product="Windup+" productId="5" price="Rs 12,999" />
                     </div>
                   </div>
@@ -131,31 +232,29 @@ hide9() {
           <h2 className="text-center heading">Offerings</h2>
           <div className="row customers7 mobilerow">
           <div className="col-md-2"></div>
-            <div className="col-md-2 col-sm-3 mb-3 imagecorp imgcorp1 text-center">
+            <div id="c1" className="col-md-2 col-sm-3 mb-3 col-8 imagecorp imgcorp1 text-center">
               <div
                 className="hexagon"
-                data-toggle="modal"
-                data-target="#myModal"
-                onClick={this.show1.bind(this)}>
+               >
                 <span>
                   <img
                     className="pin"
                     src={require("../../../images/icon3.png")}
                   />
                   <h5 className="offercontent">
-                    <div>Winding up One Person </div>
-                    <div>Company</div>
+                  <Link to="../../products/windup+/one-person-company">
+                    <div className="offercontent">Winding up One Person <br/>
+                    Company</div>
+                    </Link>
                   </h5>
                 </span>
               </div>
             </div>
 
-            <div className="col-md-2 col-sm-3 mb-3 imagecorp imgcorp2 text-center">
+            <div id="c2" className="col-md-2 col-sm-3 mb-3 col-8 imagecorp imgcorp2 text-center">
               <div
                 className="hexagon"
-                data-toggle="modal"
-                data-target="#myModal"
-                onClick={this.show2.bind(this)}>
+                >
                 <span>
                   {" "}
                   <img
@@ -163,41 +262,124 @@ hide9() {
                     src={require("../../../images/proicon3.png")}
                   />
                   <h5 className="offercontent">
-                    <div>Winding up Limited </div>
-                    <div>Liability </div>
-                    <div>Partnership </div>
+                  <Link to="../../products/windup+/limited-liabilty-partnership">
+                    <div className="offercontent" >Winding up Limited 
+                    <br/>Liability 
+                    <br/>Partnership </div>
+                    </Link>
                   </h5>
                 </span>
               </div>
             </div>
 
-            <div className="col-md-2 col-sm-3 mb-3 imagecorp imgcorp3 text-center">
+            <div id="c3" className="col-md-2 col-sm-3 mb-3 col-8 imagecorp imgcorp3 text-center">
               <div
                 className="hexagon"
-                data-toggle="modal"
-                data-target="#myModal"
-                onClick={this.show3.bind(this)}>
+                >
                 <span>
                   <img
                     className="pin"
                     src={require("../../../images/proicon2.png")}
                   />
                   <h5 className="offercontent">
-                    <div>Winding up Private</div>
-                    <div>Limited</div>
-                    <div>Company</div>
+                  <Link to="../../products/windup+/private-limited-company">
+                    <div className="offercontent">Winding up Private
+                    Limited
+                    Company</div>
+                    </Link>
                   </h5>
                 </span>
               </div>
             </div>
 
+
            <div classNamme="col-md-2"></div>
           </div>
+
+            {/*----------------------------*/}
+            <div className="container">
+            <div className="row" id="d1">
+            <div id="d1-arrow" className="arrow-up"></div>
+            <div className="col-md-6" />
+            <div className="col-md-6">
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+/one-person-company">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Learn more</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Let's get started</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+            </div>
+            </div>
+            </div>
+
+             <div className="container">
+            <div className="row" id="d2">
+            <div id="d2-arrow" className="arrow-up"></div>
+            <div className="col-md-6" />
+            <div className="col-md-6">
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+/limited-liabilty-partnership">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Learn more</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Let's get started</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+            </div>
+            </div>
+            </div>
+            
+            <div className="container">
+            <div className="row" id="d3">
+            <div id="d3-arrow" className="arrow-up"></div>
+            <div className="col-md-6" />
+            <div className="col-md-6">
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+/private-limited-company">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Learn more</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+              <h4 className="btn-dropdown">
+              <Link to="../../products/windup+">
+                  <button className="btn btn-info button14">
+                    <h4 className="heading6">Let's get started</h4>
+                  </button>
+                  
+                </Link>
+              </h4>
+            </div>
+            </div>
+            </div>
+            
+            
+             {/*----------------------------*/}
          
           
            
           </div>
        
+          <FaqFilters/>
 
         {/*<!--HOW IT WORKS-->*/}
         <HowItWorks />
@@ -223,65 +405,7 @@ hide9() {
         <Footer />
 
 
-<Rodal visible={this.state.visible1} width="500" animation="flip" onClose={this.hide1.bind(this)}  >
-  <div className="modal1">
-    <div class="container">
-       <ul class="nav nav-pills">
-      <li class="active1"><a data-toggle="tab"  href="#1">Menu1</a></li>
-      
-      <li ><a data-toggle="tab" href="#2">Menu1</a></li>  </ul>
-      
-      
-      <div class="tab-content">
-      
-      
-       <div id="1" class="tab-pane fade in active">
-      <h3 className="modalhead">This is this this t</h3>
-      </div>
-     
-      <div id="2" class="tab-pane fade ">
-      <h3 className="modalhead">This is this this this</h3>
-      </div>
-      </div>
-      </div>  
-    
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-</Rodal>
-<Rodal visible={this.state.visible2}  width="500" animation="flip" onClose={this.hide2.bind(this)}  >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible3} width="500" animation="flip" onClose={this.hide3.bind(this)} >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible4} width="500" animation="flip" onClose={this.hide4.bind(this)}  >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible5} width="500" animation="flip"onClose={this.hide5.bind(this)} >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible6} width="500"animation="flip" onClose={this.hide6.bind(this)} >
-  <div  className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible7} width="500" animation="flip" onClose={this.hide7.bind(this)} >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></div>
-</Rodal>
-<Rodal visible={this.state.visible8} width="500" animation="flip" onClose={this.hide8.bind(this)} >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
-<Rodal visible={this.state.visible9} width="500" animation="flip" onClose={this.hide9.bind(this)} >
-  <div className="modal1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-</Rodal>
 
       </div>
     );

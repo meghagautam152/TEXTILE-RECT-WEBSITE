@@ -1,6 +1,27 @@
 .protect{
   background-image:url('../../../images/protectbanner.png')
 }
+.sb15{
+  background-image:url('../../../images/sp15.png')
+}
+.sb16{
+  background-image:url('../../../images/sp16.png')
+}
+.sb17{
+  background-image:url('../../../images/sp17.png')
+}
+.sb18{
+  background-image:url('../../../images/sp18.png')
+}
+.sb19{
+  background-image:url('../../../images/sp19.png')
+}
+.sb20{
+  background-image:url('../../../images/sp20.png')
+}
+.sb21{
+  background-image:url('../../../images/sp21.png')
+}
 @media (max-width: 768px){
   .protect{
     background-image:url('../../../images/protectmobile.png');
@@ -14,4 +35,15 @@
   }
 .productssec{
   background-image:url('../../../images/back2ban.png')!important;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #079cff;
+  margin-top: 0px;
+  position: absolute;
+  opacity:0;
+  transition:all 0.5s ease;
 }

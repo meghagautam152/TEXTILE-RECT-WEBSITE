@@ -56,7 +56,7 @@ export default class HowItWorks extends Component{
       <div className="mainbody">
       <div className="how ">
       <h2 className="text-center headinghow">How it works?</h2>
-      <div class="container">
+      <div class="container big">
       <div className="row customers5">
         <div className="col-md-1"></div>
         <div className="col-md-2 col-sm-2 mb-3 imagecorp1 imgcorp1 text-center">
@@ -81,7 +81,31 @@ export default class HowItWorks extends Component{
        
         </div>
         </div>
+        <div class="container mobile">
+      <div className="row customers5">
        
+        <div className="col-md-2 col-sm-2 mb-3 imagecorp1 imgcorp1 text-center">
+        <img className="img-fluid" src={require("../../images/confused.png")} alt=""/>
+        <p style={{paddingTop:'15px', paddingLeft:'5px'}}>Ask your query</p>
+
+        </div>
+       
+        <div className="col-md-2 col-sm-2 mb-3 imagecorp1 imgcorp2 text-center" ref ="imgcorp2">
+        <img className="img-fluid" src={require("../../images/expert1.png")} alt=""/>
+        <p className="text-center" style={{paddingTop:'15px'}}>Get an answer from an expert</p>
+           </div>
+
+       
+        
+        <div className="col-md-2 col-sm-2 mb-3 imagecorp1 imgcorp3 text-center" ref ="imgcorp3">
+        <img className="img-fluid" src={require("../../images/happy.png")} alt=""/>
+        <p style={{paddingTop:'15px', paddingLeft:'5px'}}>Resolve your issue</p>
+          
+        </div>
+        
+       
+        </div>
+        </div>
       </div>
       </div>
 

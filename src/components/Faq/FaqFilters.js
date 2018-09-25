@@ -36,10 +36,8 @@ debugger;
        
         <div style={{'float':'inline'}}className="col-md-12 faqdiv text-center">
         
-        <button onClick={() => this.changeFilter('1')} className={this.state.filter=='1' ? active : deactive} >Faq1 </button>
-        <button onClick={() => this.changeFilter('2')} className={this.state.filter=='2' ? active : deactive} >Faq2 </button>
-        <button onClick={() => this.changeFilter('3')} className={this.state.filter=='3' ? active : deactive} >Faq3 </button>
-        <button onClick={() => this.changeFilter('4')} className={this.state.filter=='4' ? active : deactive} >Faq4 </button>
+        <button onClick={() => this.changeFilter('1')} className={this.state.filter=='1' ? active : deactive} >Faq's </button>
+       
         
         
         </div>

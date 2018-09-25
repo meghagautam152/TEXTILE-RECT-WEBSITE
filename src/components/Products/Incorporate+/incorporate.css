@@ -2,6 +2,33 @@
   background-image: url('../../../images/incorporate.png');
   
 }
+.sb9{
+  background-image: url('../../../images/sp9.png');
+}
+.sb8{
+  background-image: url('../../../images/sp8.png');
+}
+.sb7{
+  background-image: url('../../../images/sp7.png');
+}
+.sb6{
+  background-image: url('../../../images/sp6.png');
+}
+.sb5{
+  background-image: url('../../../images/sp5.png');
+}
+.sb4{
+  background-image: url('../../../images/sp4.png');
+}
+.sb3{
+  background-image: url('../../../images/sp3.png');
+}
+.sb2{
+  background-image: url('../../../images/sp2.png');
+}
+.sb1{
+  background-image: url('../../../images/sp1.png');
+}
 @media (max-width: 768px){
   .incorporate{
     background-image:url('../../../images/incorporatemobile.png');
@@ -24,4 +51,16 @@
   .mainbody {
     padding-top: 44px;
     overflow-x: hidden;
+  }
+
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #079cff;
+    margin-top: 0px;
+    position: absolute;
+    opacity:0;
+    transition:all 0.5s ease;
   }

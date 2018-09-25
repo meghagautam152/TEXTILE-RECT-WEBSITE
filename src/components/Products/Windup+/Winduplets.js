@@ -1,8 +1,12 @@
 import React, { Component, Fragment } from "react";
 import $ from "jquery";
 import _ from "underscore";
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css'
+import InlineError from "../../inlineerror";
+import validator from "validator";
 
-export default class Winduplets extends Component {
+export default class Incorporatelets extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -186,9 +190,11 @@ export default class Winduplets extends Component {
       typeOfEntity: "Privated Limited Company",
       pc: "",
       success: false,
-      category:[]
+      category:[],
+      errors: {}    
     };
     this.submitForm = this.submitForm.bind(this);
+    
   }
   componentDidMount() {
     let category = _.where(this.state.productCategory, {
@@ -197,16 +203,85 @@ export default class Winduplets extends Component {
     this.setState({ category });
     
   }
+  validate(data) {
+    const errors = {};
+    if (!data.name) {
+      errors.name = "This field is required";
+    } else if (!validator.isAlpha(data.name)) {
+      errors.name = "Invalid Name";
+    }
+    if (!data.email) {
+      errors.email = "This field is required";
+    } else if (!validator.isEmail(data.email)) {
+      errors.email = "Invalid Email";
+    }
+    if (!data.phone) {
+      errors.phone = "This field is required";
+    } else if (!validator.isMobilePhone(data.phone, "en-IN")) {
+      errors.phone = "Invalid Phone Number";
+    }
+    if (!data.city) {
+      errors.city = "This field is required";
+    } else if (!validator.isAlpha(data.city)) {
+      errors.city = "Invalid City Name";
+    }
+    if(typeof data.productCategory !== "string"){
+      errors.productCategory = "Please select a category";
+    }
+    return errors;
+  }
+
+ /* hasEmptyFields(){
+let anyEmptyField = 0;
+
+    if(this.state.name.length==0){
+      anyEmptyField ++;
+    }
+    if(this.state.city.length==0){
+
+      anyEmptyField++;
+    }
+
+    if(this.state.email.length==0){
+      anyEmptyField++;
+    }
+
+    if(this.state.phone.length == 0){
+
+      anyEmptyField++;
+    }
+
+    if(this.state.typeOfEntity.length==0){
+      anyEmptyField++;
+    }
+
+
+    //if empty fields are 0 then return false else true
+    if(anyEmptyField==0){
+
+      return false;
+
+    }
+    
+    else{
+      return true;
+    }
+
+  }*/
 
   submitForm(e) {
     this.setState({ success: false });
+    const errors = this.validate(this.state);
+    this.setState({ errors });
+    if (Object.keys(errors).length === 0) {
     e.preventDefault();
-    var api = "ficklebeans.com/mail/index.php";
+    var api = "http://ficklebeans.com/mail/index.php";
     $.ajax({
       url: api,
       method: "GET",
       crossOrigin : true,
       data: {
+        productoffer: this.state.productoffer,
         name: this.state.name,
         phone: this.state.phone,
         email: this.state.email,
@@ -222,6 +297,8 @@ export default class Winduplets extends Component {
       }.bind(this),
       error: function(xhr, status, err) {}.bind(this)
     });
+  }
+
   }
   onChange = e => {
     // Because we named the inputs to match their corresponding values in state, it's
@@ -243,7 +320,8 @@ export default class Winduplets extends Component {
       product,
       productCategory,
       typeOfEntity,
-      phone
+      phone,
+      errors
     } = this.state;
     return (
       <form name="sentMessage" id="contactForm" novalidate>
@@ -279,9 +357,10 @@ export default class Winduplets extends Component {
                            </select>
      </div>
         <div className="col-md-7">
-     <input type="text" value={name} onChange={this.onChange} className="form-control" name="name" placeholder="Full Name" required data-validation-required-message="Please enter your name." />
-    
+     <input type="text" value={name} onChange={this.onChange} className="form-control" name="name" placeholder="Full Name"  />
+     {errors.name && <InlineError text={errors.name} />}
      </div>
+     
      </div>
            
           <p className="help-block" />
@@ -298,12 +377,14 @@ export default class Winduplets extends Component {
               id="email"
               placeholder=" Email Id"
               required
-              data-validation-required-message="Please enter your email address."
-            />
+              data-validation-required-message="Please enter your email."
+            /> {errors.email && <InlineError text={errors.email} />}
           </div>
+         
         </div>
+
         <div className="row">
-          <div className="col-lg-6 textfields1">
+          <div className="col-lg-6 textfields" >
             <div className="control-group form-group">
               <div className="controls">
                 <input
@@ -318,9 +399,11 @@ export default class Winduplets extends Component {
                   data-validation-required-message="Please enter your phone number."
                 />
               </div>
+              {errors.phone && <InlineError text={errors.phone} />}
             </div>
+
           </div>
-          <div className="col-lg-6 textfields1" >
+          <div className="col-lg-6 textfields">
             <div className="control-group form-group">
               <div className="controls">
                 <input
@@ -335,6 +418,7 @@ export default class Winduplets extends Component {
                   data-validation-required-message="Please enter your city name."
                 />
               </div>
+              {errors.city && <InlineError text={errors.city} />}
             </div>
           </div>
         </div>
@@ -363,8 +447,9 @@ export default class Winduplets extends Component {
           </select>
         </div>
 
+
         <div className="row">
-          <div className="col-lg-8 textfields" >
+          <div className="col-lg-8 " >
             <div className=" control-group form-group">
               <label for="sel1" className="dialoguetext">
                 Product Category :
@@ -380,19 +465,23 @@ export default class Winduplets extends Component {
                   return <option key={index}> {pc.name} </option>;
                 })}
               </select>
+              {errors.productCategory && <InlineError text={errors.productCategory} />}
             </div>
+            
           </div>
         </div>
 
-        {this.state.success ? (
+        
+
+          {/*} {this.state.error ? (
           <div id="success">
-            <div class="alert alert-success">
-              <strong>Submitted succesfully!</strong>
+            <div class="alert alert-danger">
+              <strong>Please Fill All the fields</strong>
             </div>{" "}
           </div>
         ) : (
           <div />
-        )}
+        )}*/}
         {/*For success/fail messages */}
         <button
           onClick = {this.submitForm}
@@ -401,7 +490,12 @@ export default class Winduplets extends Component {
         >
         Let's get started
         </button>
+        <p className="smalltext">No spam. No sharing. 100% Confidentiality</p>
+      {/*}  <Rodal visible={this.state.success} height={100} className="pop-up" animation="flip" onClose={this.hide.bind(this)} >
+  <div><p>Thank you! Your response has been recorded, we will get back to you shortly</p></div>
+      </Rodal>*/}
       </form>
     );
   }
 }
+

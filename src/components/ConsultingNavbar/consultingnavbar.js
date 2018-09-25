@@ -1,14 +1,18 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
+
 import './consultingNavbarmain.css';
+import Topbar from '../Topbar/navbarmain';
 import $ from 'jquery';
+import BreadCrumbs from '../HomePage/BreadCrumbs';
 export default class ConsultingNavbar extends Component {
     constructor(props){
 
         super();
         this.state = {
-          openMenu : false
+          openMenu : false,
+          currentLocation:""
           
               };
       
@@ -17,7 +21,31 @@ export default class ConsultingNavbar extends Component {
               this.searchExpand();
              }
       
+             componentDidMount(){
+                let currentLocation =""+window.location.href;
+                let isCurrentPage = {sendQuery:false,
+                    request:false,
+          about:false};
+                
       
+      
+                if(currentLocation.includes("send-a-query")){
+      
+                  isCurrentPage.sendQuery = true;
+      
+                }
+              
+                else if(currentLocation.includes("request-a-proposal")){
+                    isCurrentPage.request = true;
+                }
+              else{
+                  isCurrentPage.about = true;
+              }
+                
+      
+              this.setState({currentLocation:isCurrentPage});
+               
+            }
         toggleMenu(){
       
           if(this.state.openMenu){
@@ -96,7 +124,7 @@ export default class ConsultingNavbar extends Component {
         
          
          />
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top ">
+      <nav className="navbar fixed-top2 navbar-expand-lg navbar-light bg-light fixed-top2 show-me">
           <div className="nav-item">
               <h1>
                   <span
@@ -106,7 +134,7 @@ export default class ConsultingNavbar extends Component {
                   </span>
               </h1>
           </div>
-          <div className="navbar-brand" style={{paddingTop:'16px'}}>
+          <div className="navbar-brand other-navbar-mobile" style={{paddingTop:'16px'}}>
               <Link to ="/">
               <img
               style={{paddingLeft:'3px'}}
@@ -120,13 +148,13 @@ export default class ConsultingNavbar extends Component {
           <div className="collapse navbar-collapse" id="main-navbar">
               <div>
                   <ul className="navbar-nav ml-auto" id="menu">
-                      <li className="nav-item">
+                      <li className={this.state.currentLocation.about ? "nav-item active-link" : "nav-item"}>
 
 
 {this.props.type=="send-a-query" ?   <Link className="nav-link" to ={`../../consulting/${this.props.url}`}>
 {(this.props.sqhide === "hide")?
     "Our Platforms" : "Consulting"
-}</Link> :   <Link className="nav-link" to ={`./${this.props.url}`}>
+}</Link> :   <Link className="nav-link" to ={`../../consulting/${this.props.url}`}>
 {(this.props.sqhide === "hide")?
     "Our Platforms" : "Consulting"
 }</Link>}
@@ -135,43 +163,44 @@ export default class ConsultingNavbar extends Component {
                       </li>
 
                     { this.props.type == "send-a-query" ? 
-                      ((this.props.sqhide!=="hide")?(<li className="nav-item">
+
+                      ((this.props.sqhide!=="hide")?(<li className={this.state.currentLocation.sendQuery ? "nav-item active-link" : "nav-item"}>
                           <Link className="nav-link" to={`./send-a-query`}>Send a query</Link>
                       </li>):null) :
-                        (this.props.sqhide!=="hide")?(<li className="nav-item">
-                        <Link className="nav-link" to={`../consulting/${this.props.url}/send-a-query`}>Send a query</Link>
-                    </li>):null
+                      (this.props.type == "request-a-proposal" )?
+                        ((this.props.sqhide!=="hide")?(<li className={this.state.currentLocation.sendQuery ? "nav-item active-link" : "nav-item"}>
+                        <Link className="nav-link" to={`../${this.props.url}/send-a-query`}>Send a query</Link>
+                    </li>):null) :
+                    ((this.props.sqhide!=="hide")?(<li className={this.state.currentLocation.sendQuery ? "nav-item active-link" : "nav-item"}>
+                    <Link className="nav-link" to={`../consulting/${this.props.url}/send-a-query`}>Send a query</Link>
+                </li>):null)
                     }
+                    
 
                     { this.props.type =="send-a-query" ? 
-                      ((this.props.rqhide!=="hide")?(<li className="nav-item">
+                      ((this.props.rqhide!=="hide")?(<li className={this.state.currentLocation.request ? "nav-item active-link" : "nav-item"}>
                         <Link className="nav-link" to ={`../../consulting/${this.props.url}/request-a-proposal`}>Request a Proposal</Link>
                     </li>):null) 
-                    :(this.props.rqhide!=="hide")?(<li className="nav-item">
+                    :(this.props.rqhide!=="hide")?(<li className={this.state.currentLocation.request ? "nav-item active-link" : "nav-item"}>
                     <Link className="nav-link" to ={`../consulting/${this.props.url}/request-a-proposal`}>Request a Proposal</Link>
                 </li>):null
 
                   }
 
-                      <li className="nav-item">
+                      {/*<li className="nav-item">
                           <Link className="nav-link" to="/contact-us">Contact Us</Link>
-                      </li>
+                          
+                      </li>*/}
                   </ul>
               </div>
           </div>
-          <div className="search-parent">
-          <form class="searchbox">
-            <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required/>
-            <input type="submit" class="searchbox-submit" value=""/>
-            <span class="searchbox-icon"><img src={require("../../images/searchicon.png")}/></span>
-       
-    
-        
-    </form>
-    </div>
+         
       </nav>
+      <BreadCrumbs/>
       <input type="search" placeholder="Search......" name="search" className="mobile-search" onkeyup="buttonUp();" required/>
- 
+      <div className="Searchbarr">
+<Topbar/>
+</div>
       </div>
     );
   }

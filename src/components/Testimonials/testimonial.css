@@ -33,6 +33,7 @@
   font-size: 16px;
   margin: 40px 0 20px 0;
   padding: 0px 12%;
+  font-weight:200;
 }
 .testimonial4_indicators .carousel-indicators{
   left: 0;
@@ -207,7 +208,7 @@
   color: #313131;
   font-size: 17px;
   margin: 10px 0 20px 0;
-  font-weight:600;
+  font-weight:200;
   font-family:'lato', sans-serif;
 
 }
@@ -300,4 +301,9 @@
   bottom: 0;
   margin-top: 0;
   padding: 5px;
+}
+
+.testimages{
+  height:60px;
+  width:40px;
 }

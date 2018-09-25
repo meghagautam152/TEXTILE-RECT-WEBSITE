@@ -1,6 +1,18 @@
 .tax {
   background-image: url('../../../images/taxbanner.png')
 }
+.sb18{
+  background-image:url('../../../images/sp18.png')
+}
+.sb19{
+  background-image:url('../../../images/sp19.png')
+}
+.sb20{
+  background-image:url('../../../images/sp20.png')
+}
+.sb21{
+  background-image:url('../../../images/sp21.png')
+}
 @media (max-width: 768px){
   .tax{
     background-image:url('../../../images/taxmobile.png');
@@ -15,4 +27,16 @@
   .productssec{
     background-image:url('../../../images/productsback.png')!important;
   }
+  }
+
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #079cff;
+    margin-top: 0px;
+    position: absolute;
+    opacity:0;
+    transition:all 0.5s ease;
   }

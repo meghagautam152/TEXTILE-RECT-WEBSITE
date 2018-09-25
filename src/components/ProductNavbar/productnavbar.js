@@ -1,22 +1,52 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import './productnavbarmain.css';
+import Topbar from '../Topbar/navbarmain';
 import $ from 'jquery';
+import BreadCrumbs from '../HomePage/BreadCrumbs';
 export default class ProductNavbar extends Component {
     constructor(props){
 
         super();
         this.state = {
-          openMenu : false
+          openMenu : false,
+          currentLocation:""
           
               };
       
               this.toggleMenu = this.toggleMenu.bind(this);
               this.closeMenu = this.closeMenu.bind(this);
               this.searchExpand();
+             
         }
       
+      componentDidMount(){
+          let currentLocation =""+window.location.href;
+          let isCurrentPage = {sendQuery:false,
+        pricing:false,
+    about:false};
+          
+
+
+          if(currentLocation.includes("send-a-query")){
+
+            isCurrentPage.sendQuery = true;
+
+          }
+          else if(currentLocation.includes("pricing")){
+
+            isCurrentPage.pricing = true;
+          }
+        else{
+            isCurrentPage.about = true;
+        }
+          
+
+        this.setState({currentLocation:isCurrentPage});
+         
+      }
+
       
         toggleMenu(){
       
@@ -97,7 +127,7 @@ export default class ProductNavbar extends Component {
        priceurl={this.props.priceurl}
         
         />
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top ">
+      <nav className="navbar fixed-top2 navbar-expand-lg navbar-light bg-light fixed-top2 show-me">
           <div className="nav-item">
               <h1>
                   <span
@@ -107,7 +137,7 @@ export default class ProductNavbar extends Component {
                   </span>
               </h1>
           </div>
-          <div className="navbar-brand" style={{paddingTop:'16px'}}>
+          <div className="navbar-brand other-navbar-mobile" style={{paddingTop:'16px'}}>
               <Link to ="/">
               <img
               style={{paddingLeft:'3px'}}
@@ -121,29 +151,39 @@ export default class ProductNavbar extends Component {
           <div className="collapse navbar-collapse" id="main-navbar">
               <div>
                   <ul className="navbar-nav ml-auto" id="menu">
-                      <li className="nav-item">
+                      <li className={this.state.currentLocation.about ? "nav-item active-link" : "nav-item"}>
                     {this.props.type=="send-a-query"  ?  <Link className="nav-link" to ={`../../products/${this.props.url}`}>About</Link> :
                          (this.props.type=="pricing" ? <Link className="nav-link" to ={`../${this.props.url}`}>About</Link> : <Link className="nav-link" to ={`./${this.props.url}`}>About</Link>)}
                       </li>
 
                       
-                       <li className="nav-item">
-                       {this.props.type=="pricing" ?  <Link className="nav-link" to="./pricing" >Pricing</Link> :
-                       
-                       (this.props.type=="send-a-query" ? <Link className="nav-link" to={`../../products${this.props.priceurl}`}>Pricing</Link> : 
-                       <Link className="nav-link" to={this.props.priceurl}>Pricing</Link>)
+                       <li className={this.state.currentLocation.pricing ? "nav-item active-link" : "nav-item"}>
+                       {this.props.type=="pricing" ? 
+                       <Link className="nav-link" to="./pricing" >Pricing</Link> :
+                       (this.props.type=="send-a-query" ? 
+                       (this.props.priceurl!=undefined ? 
+                       <Link className="nav-link" to={`../../products${this.props.priceurl}`}>Pricing</Link> :
+                       <Link className="nav-link" to={'./pricing'}>Pricing</Link> )
+                       :
+                      
+                       <Link className="nav-link" to={this.props.priceurl}>Pricing</Link>
+                       )
                     }
                          
                       </li>
                   
 
                     {
-                      (this.props.sqhide!=="hide")?(<li className="nav-item">
+                      (this.props.sqhide!=="hide")?(<li className={this.state.currentLocation.sendQuery ? "nav-item active-link" : "nav-item"}>
 
-{this.props.type!="pricing" ? 
+{(this.props.type!="pricing" && this.props.type!="subproducts") ? 
+
 <Link className="nav-link" to={`../products/${this.props.url}/send-a-query`}>Send a query</Link> :
-   <Link className="nav-link" to={`../../products/${this.props.url}/send-a-query`}>Send a query</Link>
-                  
+
+(this.props.pricingtype=="subpricing" ? <Link className="nav-link" to={`../${this.props.url}/send-a-query`}>Send a query</Link>
+:<Link className="nav-link" to={`../../products/${this.props.url}/send-a-query`}>Send a query</Link>
+) 
+                
                   
 
 
@@ -152,24 +192,17 @@ export default class ProductNavbar extends Component {
 
                            </li>):null
                     }
-                      <li className="nav-item">
-                          <Link className="nav-link" to="/contact-us">Contact Us</Link>
-                      </li>
+                      
                   </ul>
               </div>
           </div>
-          <div className="search-parent">
-          <form class="searchbox">
-            <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required/>
-            <input type="submit" class="searchbox-submit" value=""/>
-            <span class="searchbox-icon"><img src={require("../../images/searchicon.png")}/></span>
-       
-    
         
-    </form></div>
       </nav>
+      <BreadCrumbs/>
       <input type="search" placeholder="Search......" name="search" className="mobile-search" onkeyup="buttonUp();" required/>
- 
+      <div className="Searchbarr">
+<Topbar/>
+</div>
       </div>
     );
   }

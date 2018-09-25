@@ -1,6 +1,25 @@
 .windup{
   background-image: url('../../../images/windbanner.png');
 }
+
+.subwindup{
+  background-image: url('../../../images/subbanner6.png');
+}
+.sb5{
+  background-image: url('../../../images/sp5.png');
+}
+.sb4{
+  background-image: url('../../../images/sp4.png');
+}
+.sb3{
+  background-image: url('../../../images/sp3.png');
+}
+.sb2{
+  background-image: url('../../../images/sp2.png');
+}
+.sb1{
+  background-image: url('../../../images/sp1.png');
+}
 @media (max-width: 768px){
   .windup{
     background-image:url('../../../images/mobileproducts.png');

@@ -45,6 +45,7 @@
  
   .dialoguetext{
     padding-left:20px;
+    margin-top:-20px;
   }
   .car1{
     height:94vh;
@@ -58,7 +59,7 @@
     font-family: 'Lato', sans-serif;
     color: #888888;
     font-size:19px;
-   
+    margin-top:-20px;
   }
   .trainsec2 {
     border-radius: 5px;

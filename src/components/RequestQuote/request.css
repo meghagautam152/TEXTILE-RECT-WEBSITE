@@ -1,7 +1,37 @@
 .request{
-    background-image:url('../../images/reqback.png');
+    background-image:url('../../images/bantex.png');
+    background-size: cover;
+    height:auto;
+   }
+   .request1{
+    background-image:url('../../images/bantex.png');
+    background-size: cover;
+    height:auto;
    }
 
     .req{
         padding:60px 30px 0px 30px;
+    }
+
+    .requestname h5{
+        color: rgb(231, 231, 231);
+    }
+
+
+    .send-form label{
+        color: rgb(231, 231, 231);
+    }
+
+    .requestname small{
+        color: rgb(255, 22, 22);
+    }
+
+
+    .success-msg{
+        color: #fff;
+    }
+
+
+    label{
+        color: rgb(124, 124, 124);
     }

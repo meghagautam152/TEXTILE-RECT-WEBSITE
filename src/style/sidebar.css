@@ -64,14 +64,13 @@
 }
 
 
-.menu-icon{
-    margin-top:px;
-
+.menu-icon {
+    margin-top: px;
     color: #555555;
-    left:0px;
-    border-right:2px solid #447EAE;
-    /* padding:34px 15px 42px 20px; */
-    padding : 42px 15px 35px 20px;
+    left: 0px;
+    border-right: 1px solid #d7d8d8;
+    /* padding: 34px 15px 42px 20px; */
+    padding: 42px 15px 32px 20px;
 }
 
 

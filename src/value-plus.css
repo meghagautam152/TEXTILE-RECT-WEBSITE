@@ -148,7 +148,7 @@ body {
  }
  .nav-item
  {padding:0px 3px;
-  font-size:16px; font-weight:600;
+  font-size:16px; font-weight:400;
   font-family: 'Lato', sans-serif;
   color:#0d1d37;}
   
@@ -203,14 +203,14 @@ height:70px;
 {margin:15px 0px;
   color:#ffffff;
   font-size:15px;
-  font-family: 'Lato', sans-serif;
-font-weight:200;}
+  
+font-weight:100;}
 #footer-head
 {margin-bottom:15px;
   color:#ffffff;
   font-size:21px;
-  font-family: 'Lato', sans-serif;
-font-weight:600;}
+ 
+font-weight:200;}
 
 #latestarticles{
   color:#535d6d;
@@ -407,7 +407,7 @@ padding:40px 20px 40px 300px;}
    /*fonts*/    
    .heading3{
    color:#2b2b2b;
-   font-weight:600;
+   font-weight:200;
    font-size:15px;
    font-family: 'Lato', sans-serif
    
@@ -444,6 +444,7 @@ padding:40px 20px 40px 300px;}
 }
 .heading
 {margin-top:25px;
+
 
 color:#6d6d6d;
 font-size:26px;
@@ -554,10 +555,7 @@ transform: scale(1.1);
   margin-right:-45px;
  }
 
-.dialoguetext
-{ font-family: 'Lato', sans-serif;
- color:#444343;
-}
+
 .textblock1
 { padding: 25px 0px 25px 40px;
   margin-bottom:50px;
@@ -1035,3 +1033,10 @@ font-size:28px;
 .pricing
 {padding-top:100px;
  padding-left:60px;}
+
+ .how2{
+   background-color: #095375 !important;
+ }
+ .authorrow{
+   height:200px;
+ }

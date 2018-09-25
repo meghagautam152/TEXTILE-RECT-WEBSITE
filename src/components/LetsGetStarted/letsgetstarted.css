@@ -29,3 +29,24 @@
    .pop-up .rodal-dialog div p{
     color: #fff;
   }
+
+  .tabtext{
+    color:rgb(240, 240, 240);
+    font-size:15px;
+    padding-left:40px;
+    font-family: lato;
+    margin-top:-10px;
+  }
+
+  .tab{
+    padding-top:15px;
+    background-color: #00C9A7;
+    margin-bottom:10px;
+  }
+
+  
+
+  .active2{
+    background-color: rgb(5, 131, 108) !important;
+    border:green;
+  }

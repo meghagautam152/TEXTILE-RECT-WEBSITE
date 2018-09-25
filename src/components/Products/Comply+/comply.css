@@ -1,6 +1,48 @@
 .comply{
   background-image: url('../../../images/comply.png');
 }
+.subcomply{
+  background-image: url('../../../images/subbanner5.png');
+}
+.sb13{
+  background-image: url('../../../images/sp13.png');
+}
+.sb12{
+  background-image: url('../../../images/sp12.png');
+}
+.sb11{
+  background-image: url('../../../images/sp11.png');
+}
+.sb10{
+  background-image: url('../../../images/sp10.png');
+}
+.sb9{
+  background-image: url('../../../images/sp9.png');
+}
+.sb8{
+  background-image: url('../../../images/sp8.png');
+}
+.sb7{
+  background-image: url('../../../images/sp7.png');
+}
+.sb6{
+  background-image: url('../../../images/sp6.png');
+}
+.sb5{
+  background-image: url('../../../images/sp5.png');
+}
+.sb4{
+  background-image: url('../../../images/sp4.png');
+}
+.sb3{
+  background-image: url('../../../images/sp3.png');
+}
+.sb2{
+  background-image: url('../../../images/sp2.png');
+}
+.sb1{
+  background-image: url('../../../images/sp1.png');
+}
 @media (max-width: 768px){
   .comply{
     background-image:url('../../../images/complymobile.png');

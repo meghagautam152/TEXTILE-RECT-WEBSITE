@@ -87,20 +87,20 @@ export default class HowItWorksconsult extends Component{
       <div class="container">
       <div className="row mobile11">
       <div className="col-md-1"></div>
-        <div className="col-md-3  col-sm-2 imagecorp imgcorp1 text-center">
+        <div className="col-md-3  col-sm-2 imagecorp1 imgcorp1 text-center">
           <img className="img-fluid " src={require("../../../images/howconsult.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px' }}><div>Post a job</div></p>
 
         </div>
         
-        <div className="col-md-3 col-sm-2  imagecorp imgcorp2 text-center" ref ="imgcorp2">
+        <div className="col-md-3 col-sm-2  imagecorp1 imgcorp2 text-center" ref ="imgcorp2">
           <img className="img-fluid " src={require("../../../images/howconsult1.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px'}}><div>Get proposal</div></p>
            </div>
 
        
         
-        <div className="col-md-3 col-sm-2  imagecorp imgcorp3 text-center" ref ="imgcorp3">
+        <div className="col-md-3 col-sm-2  imagecorp1 imgcorp3 text-center" ref ="imgcorp3">
           <img className="img-fluid" src={require("../../../images/howconsult2.png")} alt="" />
           <p className="worktext" style={{paddingTop:'15px', paddingLeft:'5px'}}>Hire an expert</p>
           

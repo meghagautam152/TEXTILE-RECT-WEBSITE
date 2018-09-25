@@ -160,6 +160,7 @@ export default class ConsultingLgs extends Component {
         >
           Submit
         </button>
+        <p className="smalltext">No spam. No sharing. 100% Confidentiality</p>
         <Rodal visible={this.state.success} height={100} className="pop-up" animation="flip" onClose={this.hide.bind(this)} >
   <div><p>Thank you! Your response has been recorded, we will get back to you shortly</p></div>
 </Rodal>

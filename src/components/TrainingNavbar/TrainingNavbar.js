@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import SideBar from '../SideBar/SideBar';
 import './consultingNavbarmain.css';
 import $ from 'jquery';
+import Topbar from '../Topbar/navbarmain';
+import BreadCrumbs from '../HomePage/BreadCrumbs';
 export default class TrainingNavbar extends Component {
     constructor(props){
 
@@ -90,8 +92,9 @@ export default class TrainingNavbar extends Component {
             
     render(){
     return(<div>
+        
          <SideBar ref="child" closeMenu={this.closeMenu} stateOpen={this.state.openMenu}/>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top ">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top show-me">
           <div className="nav-item">
               <h1>
                   <span
@@ -101,7 +104,7 @@ export default class TrainingNavbar extends Component {
                   </span>
               </h1>
           </div>
-          <div className="navbar-brand" style={{paddingTop:'16px'}}>
+          <div className="navbar-brand other-navbar-mobile" style={{paddingTop:'16px'}}>
               <Link to ="/">
               <img
               style={{paddingLeft:'3px'}}
@@ -146,25 +149,16 @@ export default class TrainingNavbar extends Component {
 
                   }
 
-                      <li className="nav-item">
+                      {/*<li className="nav-item">
                           <Link className="nav-link" to="/contact-us">Contact Us</Link>
-                      </li>
+                </li>*/}
                   </ul>
               </div>
           </div>
-          <div className="search-parent">
-          <form class="searchbox">
-            <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required/>
-            <input type="submit" class="searchbox-submit" value=""/>
-            <span class="searchbox-icon"><img src={require("../../images/searchicon.png")}/></span>
-       
-    
-        
-    </form>
-    </div>
+          
       </nav>
-      <input type="search" placeholder="Search......" name="search" className="mobile-search" onkeyup="buttonUp();" required/>
- 
+      <BreadCrumbs/>
+ <Topbar/>
       </div>
     );
   }

@@ -1,15 +1,16 @@
 .navmain-item{
   color:#6b6b6d ;
   font-size:15px;
-  font-weight:800;
+  font-weight:200;
 }
 
 .nav-item{
   font-size:16px;
 }
 .navbar{
-  border-top:4px solid #4580B1;
-  background-color: #ffffff;
+  border-top:1px solid rgb(207, 207, 207) !important;
+  background-color: #ffffff !important;
+  border-bottom:4px solid #4580B1;
 }
 
 .searchbox{
@@ -116,4 +117,20 @@
     .mobile-search{
       display: none;
     }
+      }
+
+
+      
+      .fixed-top2 {
+        position: fixed;
+        top: 0px;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        background-color:#ffffff;
+      }
+
+      .active-link a{
+        color:#09689D !important;
+
       }

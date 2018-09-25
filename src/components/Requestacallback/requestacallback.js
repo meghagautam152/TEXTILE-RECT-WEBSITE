@@ -94,7 +94,7 @@ export default class Requestacallback extends Component{
      <div className="request">
       <div className="container req">
         <div className="requestname">
-          <h2 className=" heading ">Request a callback</h2>
+          <h2 className=" heading32">Request a callback</h2>
             
         </div>
 {/*    // -- Contact Form -->
@@ -109,7 +109,7 @@ export default class Requestacallback extends Component{
 
             <div className="control-group form-group">
               <div className="controls">
-                <label> Title:</label>
+                <label className="labels"> Title:</label>
                  <select  onChange={this.onChange} className="form-control" name="typeOfEntity" placeholder="Type of entity">
                                       <option>Mr</option>
                                       <option>Ms</option>
@@ -121,7 +121,7 @@ export default class Requestacallback extends Component{
           </div>
           <div className="control-group form-group">
             <div className="controls">
-              <label>Name:</label>
+              <label className="labels">Name:</label>
               <input type="text"
               className="form-control" id="name"
               name="name"
@@ -134,7 +134,7 @@ export default class Requestacallback extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label> Name of your company:</label>
+              <label className="labels"> Name of your company:</label>
               <input type="text"
               className="form-control" id="company"
               name="company"
@@ -147,7 +147,7 @@ export default class Requestacallback extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label>Contact No:</label>
+              <label className="labels">Contact No:</label>
               <input type="tel"
               name="phone"
               onChange={this.onChange}
@@ -159,7 +159,7 @@ export default class Requestacallback extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label>Email Address:</label>
+              <label className="labels">Email Address:</label>
               <input type="email"
               name="email"
               onChange={this.onChange}
@@ -170,7 +170,7 @@ export default class Requestacallback extends Component{
           </div>
           <div className="control-group form-group">
             <div className="controls">
-              <label>Which product/service you would like to avail?</label>
+              <label className="labels">Which product/service you would like to avail?</label>
               <textarea rows="10" cols="100"
               className="form-control" id="message"
               name="message"

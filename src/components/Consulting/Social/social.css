@@ -3,6 +3,7 @@
 }
 @media (max-width: 768px){
   .social{
+    margin-top:150px;
     background-image:url('../../../images/socmobile.png');
   }
   #whatweoffer {

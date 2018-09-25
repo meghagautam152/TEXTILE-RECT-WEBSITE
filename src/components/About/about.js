@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './about.css';
 import NavbarMain from '../NavbarMain/navbarmain';
 import Footer from '../Footer/footer';
+import Topbar from '../Topbar/navbarmain';
 
 export default class About extends Component {
   render() {
     return (
       <div className="mainbody">
+     
       <NavbarMain />
     <header>
     <div className="carousel slide" data-ride="carousel">
@@ -26,7 +28,7 @@ export default class About extends Component {
     <div className="row" id="whatwedo">
       
       <div className="col-lg-12" style={{paddingTop:'40px'}}>
-        <h2 className="heading">About Value Plus</h2>
+        <h2 className="heading16">About Value Plus</h2>
         <p className="abouttext">Since 1994, Value Plus, is a multidisciplinary and integrated problem solver to resolve your current business concerns. Value Plus is lead by stalwarts and professionally qualified experts in various fields who bring in decades of experience on
           to the table to help simplify complex business needs. We have developed expertise in catering to the legal, financial and management needs of corporate's, startup's and social enterprises alike. Our approach to problem solving is more proactive
           than reactive. We are a Trusted Business Partner. Our focus is to build a healthy and lasting relationship with the clients by providing them with quality products and services through its high caliber knowledge base, value added professional
@@ -38,7 +40,7 @@ export default class About extends Component {
       <div className="container">
       
       <div className="col-lg-12" style={{paddingTop:'40px'}}>
-        <h2 className="heading">Our Mission</h2>
+        <h2 className="heading16">Our Mission</h2>
         <p className="abouttext">We believe that for a nation to grow, it’s businesses must grow. Our mission is to act as catalysts for business growth by offering quality products and services. 
         </p>
       </div>
@@ -47,7 +49,7 @@ export default class About extends Component {
     
      <div className="row">
      <div className="container">
-    <h2 className="text-center heading">Our Values</h2>
+    <h2 className="text-center heading16">Our Values</h2>
     <div className="row customers mobilerow7">
       <div className="col-lg-2 col-sm-4 mb-4 aboutimage ">
         <img className="img-fluid  " src={require("../../images/teamwork.png")} alt=""/>

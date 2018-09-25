@@ -1,10 +1,11 @@
 .footer {
-  background-image: url('../../images/footerbag.png');
+  background-color: rgb(184, 184, 184);
   background-size: cover;
   background-position-y: 92%;
-  padding-top: 50px;
+  padding-top: 20px;
   height: auto !important;
   position:inherit;
+  padding-bottom:20px;
 }
 @media (max-width: 768px){
   .footer{
@@ -84,4 +85,16 @@ ul {
 .copytext{
   font-size:10px;
   color:#11428a;
+}
+.redheader{
+  background-color: rgb(247, 82, 82);
+  margin-bottom:40px;
+  color:white;
+  font-size:15px;
+  padding-top:8px;
+}
+
+.redheadertext{
+  font-size:16px;
+  font-family:lato,'sans-serif';
 }

@@ -94,7 +94,7 @@ export default class HowItWorks extends Component{
         <div className="how mobile">
         <h2 className="text-center headinghow">How it works?</h2>
         <div class="container">
-          <div className="customers mobilerow2">
+          <div className=" mobilerow2">
         <div className="row ">
   
           <div className="col-md-5 col-sm-2 mb-3 imagecorp1 imgcorp1 text-center">

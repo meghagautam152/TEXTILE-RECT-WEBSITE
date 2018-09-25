@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import ProductNavbar from '../ProductNavbar/productnavbar';
+import DocsNavbar from '../Docsnavbar/navbarmain';
 import TrainingNavbar from '../TrainingNavbar/TrainingNavbar';
 import ConsultingNavbar from '../ConsultingNavbar/consultingnavbar';
 import Footer from '../Footer/footer';
@@ -25,7 +26,8 @@ export default class SendQuery extends Component{
     stateName:"",
     employee:"",
     success: false,
-    pageNo:1};
+    pageNo:1,
+  showError:false};
     this.submitForm = this.submitForm.bind(this);
   }
 
@@ -36,6 +38,14 @@ export default class SendQuery extends Component{
   
 
   submitForm(e) {
+    this.setState({showError:false});
+if(!this.isValidate()){
+this.setState({showError:true});
+  return true;
+
+
+}
+
     this.setState({ success: false });
     e.preventDefault();
     var api = "http://ficklebeans.com/mail/query.php";
@@ -57,6 +67,7 @@ export default class SendQuery extends Component{
       },
       success: function(data) {
         this.setState({ success: true });
+        this.setState({pageNo:5});
       }.bind(this),
       error: function(xhr, status, err) {}.bind(this)
     });
@@ -73,14 +84,49 @@ export default class SendQuery extends Component{
     });
   };
 
+    isValidate(){
 
+      var status = false;
+      switch(this.state.pageNo){
+
+case 1 : this.state.message.length> 0 ? status =  true : status= false;
+break;
+case 2 : this.state.cityName.length>0 && this.state.stateName.length > 0 ? status =  true : status= false
+break;
+case 3 :this.state.employee.length>0 ? status =  true : status= false
+break;
+case 4 :this.state.name.length>0 && this.state.email.length>0 && this.state.phone.length>0 ? status =  true : status= false
+break;
+
+
+
+
+
+      }
+      return status;
+
+     
+
+
+
+      }
   changePage(type){
- 
-    if(type=="NEXT" ){
+    this.setState({showError:false});
+    if(type=="NEXT"){
+  if(this.isValidate()){
+  this.setState({pageNo:this.state.pageNo+1});
+
+    }
+
+    else{
+
+      this.setState({showError:true});
+    }
 
 
 
-    this.setState({pageNo:this.state.pageNo+1});
+
+
 
 
 
@@ -95,10 +141,14 @@ export default class SendQuery extends Component{
   render(){
     const display = {"display":"none"};
     const {url} = this.props.match.params;
+    
     let data = url[0].toUpperCase();
     for(let i =1; i<url.length;i++){
       data+=url[i];
     }
+
+    data = data.replace("-"," ").replace("-"," ");
+
     let priceurl;
     switch (url) {
       case "incorporate+":
@@ -121,20 +171,19 @@ export default class SendQuery extends Component{
     }
 
     const pageTitle = this.state.pageNo==1 ? 
-    "Your Query Advice from Experts" : 
-    (this.state.pageNo==2 ? "Tell us a little more so we can help" : 
-    (this.state.pageNo==3 ? "How Many Employees are there in your organisation" : "Tell us about yourself" ));
+    <div>Your query <sup>*</sup></div> : 
+    (this.state.pageNo==2 ? <div>Tell us a little more so we can help<sup>*</sup></div> : 
+    (this.state.pageNo==3 ? <div>How many employees are there in your organisation<sup>*</sup></div>: "Tell us about yourself" ));
 
     return(
       <div>
-      {(url==="incorporate+"||url==="comply+"||url==="protect+"||url==="tax+"||url==="windup+")?
-      
-      (<ProductNavbar
-      url = {url}
-      priceurl ={priceurl}
-      type = "send-a-query"
-      subhead = {`${data.toUpperCase()}`}
-      />) :(
+      {(url==="startup"||url==="social"||url==="corporate")?
+       (<ConsultingNavbar
+        url = {url}
+        type = "send-a-query"
+        subhead ={`${data.toUpperCase()}`}
+         />)
+       :(
         (url==="strategic"||url==="functional")?
         (<TrainingNavbar
       url = {url}
@@ -142,21 +191,47 @@ export default class SendQuery extends Component{
       type = "send-a-query"
       subhead = {`${data.toUpperCase()}`}
       />):
-      (<ConsultingNavbar
-       url = {url}
-       type = "send-a-query"
-       subhead ={`${data.toUpperCase()}`}
-        />))
-     }
+      ((
+        (url==="docs")?
+        (<DocsNavbar
+      url = {url}
+     
+      type = "send-a-query"
+      subhead = {`${data.toUpperCase()}`}
+      />):
+      (<ProductNavbar
+        url = {url}
+        priceurl ={priceurl}
+        type = "send-a-query"
+        subhead = {`${data.toUpperCase()}`}
+        />))))
+     
+      }
+
+
+     
      <div className="request">
       <div className="container req">
         <div className="requestname">
-          <h2 className=" heading ">{pageTitle}</h2>
-            <h5>{`(${data})`}</h5>
+        <h2 className="heading1">Advice from experts</h2>
+        <h5 className="heading34">{`(${data})`}</h5>
+     <div style={this.state.pageNo==5 ? display : {}}> <h2 className="sub-heading-query">{pageTitle}</h2>
+       {this.state.showError ? <small><sup>*</sup> fields are Required</small> : ""} 
+           </div>
         </div>
+
+
+
+
+
+
+
     <div className="row">
           <div className="col-lg-8 mb-4">
-            <form name="sentMessage" id="query" novalidate>
+
+<div className="success-msg" style={this.state.pageNo==5 ? {} : display } ><h2>Thank You! Your submission has been recorded. We will get back to you shortly</h2></div>
+
+            <form style={this.state.pageNo==5 ? display : {} } name="sentMessage" id="query" className="send-form" novalidate>
               <input type="hidden"
               className="form-control"
               id="subject" value={`Value Plus/${data}/Send a Query`}
@@ -179,7 +254,7 @@ export default class SendQuery extends Component{
           </div>
           <div className="control-group form-group">
             <div className="controls">
-              <label>Name:</label>
+              <label>Name<sup>*</sup></label>
               <input type="text"
               className="form-control" id="name"
               name="name"
@@ -192,7 +267,7 @@ export default class SendQuery extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label> Name of your company:</label>
+              <label> Name of your company</label>
               <input type="text"
               className="form-control" id="company"
               name="company"
@@ -205,7 +280,7 @@ export default class SendQuery extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label>Contact No:</label>
+              <label>Contact No<sup>*</sup></label>
               <input type="tel"
               name="phone"
               onChange={this.onChange}
@@ -217,7 +292,7 @@ export default class SendQuery extends Component{
 
           <div className="control-group form-group">
             <div className="controls">
-              <label>Email address:</label>
+              <label>Email address<sup>*</sup></label>
               <input type="email"
               name="email"
               onChange={this.onChange}
@@ -264,13 +339,13 @@ export default class SendQuery extends Component{
            <div className="control-group form-group">
              <div className="controls">
             
-               <input type="radio" name="employee" value="I am an Individual" onChange={this.onChange} />&nbsp;&nbsp;I am an Individual<br/>
-  <input type="radio" onChange={this.onChange}  name="employee" value="1-10" />&nbsp;&nbsp;1 - 10 <br/>
-  <input type="radio" onChange={this.onChange} value="11 - 50" name="employee" />&nbsp;&nbsp;11 - 50<br/>
-   <input type="radio" onChange={this.onChange} value="51- 200" name="employee" />&nbsp;&nbsp;51- 200<br/>
-  <input type="radio" onChange={this.onChange} value="201 - 500" name="employee" />&nbsp;&nbsp;201 - 500<br/>
-   <input type="radio" onChange={this.onChange} value="501 - 1000" name="employee"/>&nbsp;&nbsp;501 - 1000<br/>
-  <input type="radio"  onChange={this.onChange} value="1000+" name="employee" />&nbsp;&nbsp;1000+<br/>
+               <input type="radio" name="employee" value="I am an Individual" onChange={this.onChange} /><label>&nbsp;&nbsp;I am an Individual</label><br/>
+  <input type="radio" onChange={this.onChange}  name="employee" value="1-10" /><label>&nbsp;&nbsp;1 - 10 </label><br/>
+  <input type="radio" onChange={this.onChange} value="11 - 50" name="employee" /><label>&nbsp;&nbsp;11 - 50</label><br/>
+   <input type="radio" onChange={this.onChange} value="51- 200" name="employee" /><label>&nbsp;&nbsp;51- 200</label><br/>
+  <input type="radio" onChange={this.onChange} value="201 - 500" name="employee" /><label>&nbsp;&nbsp;201 - 500</label><br/>
+   <input type="radio" onChange={this.onChange} value="501 - 1000" name="employee"/><label>&nbsp;&nbsp;501 - 1000</label><br/>
+  <input type="radio"  onChange={this.onChange} value="1000+" name="employee" /><label>&nbsp;&nbsp;1000+</label><br/>
              </div>
      </div>
           </div>
@@ -303,6 +378,8 @@ export default class SendQuery extends Component{
           <button style={this.state.pageNo==4 ? display : {}} onClick={() => this.changePage("NEXT")} className="btn btn-primary mr-1" >Next</button>
   
 </form>
+
+
 
 
 
@@ -355,9 +432,9 @@ export default class SendQuery extends Component{
   <Sendqueryhow/>
   
   <Footer />
-  <Rodal visible={this.state.success} height={100} className="pop-up" animation="flip" onClose={this.hide.bind(this)} >
+ {/*  <Rodal visible={this.state.success} height={100} className="pop-up" animation="flip" onClose={this.hide.bind(this)} >
   <div><p>Thank you! Your response has been recorded, we will get back to you shortly</p></div>
-</Rodal>
+</Rodal> */}
   </div>
 
 

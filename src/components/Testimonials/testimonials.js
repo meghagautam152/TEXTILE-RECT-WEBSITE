@@ -21,49 +21,62 @@ export default class Testimonials extends Component{
     }
   render(){
     return(
-       
+       <div>
     <Carousel showArrows={true} onChange={this.onChange} onClickItem={this.onClickItem} showStatus={false} onClickThumb={this.onClickThumb} infiniteLoop={true} transitionTime={10} autoPlay={true}>
                 <div>
                 <div className="testimonial4_slide">
-                <img className="testimages" src={require("../../images/peepimg1.png")}/>
+                <img className="testimages" src={require("../../images/userdefault.png")}/>
 					
-					<p>Value Plus is one stop platform for all business consulting services. Will surely be availing your services again in the future. Thank you for the amazing work. 
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  
 </p>
-					<h4>Dr Rajat Chabba</h4>
+					<h4>xyz</h4>
 				</div>
                 </div>
                 <div>
                 <div className="testimonial4_slide">
-                <img  className="testimages"  src={require("../../images/peepimg2.png")}/>
+                <img  className="testimages"  src={require("../../images/userdefault.png")}/>
 					
 					
-					<p> Value plus services are effortless, affordable and excellent. The entire experience from requesting the services till the end was convenient, hassle free and very satisfactory. </p>
-					<h4>Samdarsh Baweja</h4>
+					<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  </p>
+					<h4>abc</h4>
 				</div>
                 </div>
                 <div>
                 <div className="testimonial4_slide">
-                <img  className="testimages"  src={require("../../images/peepimg3.png")}/>
+                <img  className="testimages"  src={require("../../images/userdefault.png")}/>
 					
 					
-					<p> The Value plus team is extremely proactive and helpful. The work was done on time, professionally and exceeded my expectations. Keep up the good work team. </p>
-					<h4>Sandeep Yadav</h4>
+					<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  </p>
+					<h4>lmn</h4>
 				</div>
                 </div>
                 
                 <div>
                 <div className="testimonial4_slide">
-                <img className="testimages" src={require("../../images/peepimg4.png")}/>
+                <img className="testimages" src={require("../../images/userdefault.png")}/>
 					
-					<p>I was amazed to find such a platform. Perfect combination of customer experience, quality service and a motivated team. Thank you for a great experience and valuable guidance throughout the process. Good luck!
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
 
 </p>
-					<h4>Shweta Banerjee</h4>
+					<h4>rst</h4>
 				</div>
                 </div>
                 
                
             </Carousel>
+
+            <div className="row socialmed">
+            <div className="col-md-4"></div>
+            <div className="col-md-2">
+            <h2 className="testimonials2">Follow us on :</h2>
+            </div>
+            <div className="col-md-3">
+            <i class="fa fa-facebook-official" style={{fontSize:'43px'}}></i>
+            <i class="fa fa-twitter-square	" style={{fontSize:'43px'}}></i>
+            <i class="fa fa-linkedin-square" style={{fontSize:'43px'}}></i>
+            </div>
+            </div>
+            </div>
     );
   }
 }

@@ -7,7 +7,7 @@ export default class Contact extends Component {
     return(
       <div className="mainbody">
       <NavbarMain />
-      <div className="request requestmap">
+      <div className="request1 requestmap">
       <div class="container req">
          <h3 class="mt-4 mb-3"></h3>
     {/*<!-- Content Row -->*/}
@@ -42,7 +42,7 @@ export default class Contact extends Component {
         <h4>Send us a Message</h4>
         <form name="sentMessage" id="query" novalidate>
 
-          <input type="hidden" class="form-control" id="subject" value="NA" required data-validation-required-message="Please enter your name." />
+          <input type="hidden" class="form-control1" id="subject" value="NA" required data-validation-required-message="Please enter your name." />
           <div class="control-group form-group">
             <div class="controls">
               <label> Title:</label>

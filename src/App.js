@@ -4,6 +4,8 @@ import HomePage from "./components/HomePage/homepage";
 import NavbarMain from "./components/NavbarMain/navbarmain";
 
 
+
+
 class App extends Component {
   componentDidMount(){
     const loader = document.querySelector('.loader');
@@ -15,10 +17,11 @@ class App extends Component {
   render() {
     return (
       <div>
-      <NavbarMain/>
+      <NavbarMain type="SINCE 1994" para="homepage"/>
       
         <HomePage />
         <Footer />
+    
       </div>
     );
   }

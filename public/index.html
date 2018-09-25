@@ -11,9 +11,9 @@
     -->
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <link rel="shortcut icon" type="image/png" href="./fav.png" />
-  <link rel="shortcut icon" type="image/png" href="http://eg.com/fav.png" />
+ 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -26,7 +26,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Value Plus</title>
+  <title>Alphrade</title>
 </head>
 
 <body>
@@ -59,8 +59,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script>
+       
       window.setInterval(function(){
-        debugger;
+
         FB.XFBML.parse();
         getTweets();
 
@@ -74,6 +75,25 @@
         });
       };
 
+
+
+
+$(window).scroll(function() {
+
+if ($(this).scrollTop()>0)
+ {
+  
+  $('.request-button').slideDown();
+  $('.request-button2').slideDown();
+ }
+else
+ {
+  $('.request-button').slideUp();
+  $('.request-button2').slideUp();
+ 
+  
+ }
+});
       
     
       (function(d, s, id){

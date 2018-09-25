@@ -791,22 +791,25 @@ $(function() {
          <div className="row circle-row1 mobilerow1">
           
            <div className=" boxcor col-5 col-sm-4 mb-3 " id="c1">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c2.png")}/>
              <div className="nav-item ">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{
                                        padding: '8px 0px'}}><h5 className="consulttext">Accounting and Assurance services</h5></a>
                
              </div>
-
+             </Link>
             </div>
 
            <div className=" boxcor col-5 col-sm-4 mb-3"  id="c2">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c3.png")}/>
-             <div className="nav-item dropdown">
-               <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
+             <div className="nav-item ">
+               <a className="nav-link circle2 "  id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '10px 10px '}}><h5 className="consulttext">Goods and Services tax</h5></a>
              
              </div>
+             </Link>
              </div>
 
            </div>
@@ -875,23 +878,26 @@ $(function() {
          
            <div className="row circle-row1 mobilerow1">
            <div className=" boxcor col-5 col-sm-5 mb-3"  id="c3">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c4.png")}/>
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '10px 0px'}}><h5 className="consulttext">Corporate  Law/ Legal Advisory Services</h5></a>
                
              </div>
-
+             </Link>
            </div>
 
            <div className=" boxcor col-5 col-sm-5 mb-3" id="c4">
            <img src={require("../../../images/c5.png")}/>
+           <Link to="/consulting/corporate/request-a-proposal">
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '8px 0px'}}><h5 className="consulttext">Advice on Company/ Corporate law</h5></a>
                
                  
                </div>
+               </Link>
              </div>
              
            </div>        
@@ -985,38 +991,45 @@ $(function() {
          
            <div className=" boxcor col-5 col-sm-2 mb-3 " id="c5">
            <img src={require("../../../images/c6.png")}/>
+           <Link to="/consulting/corporate/request-a-proposal">
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '8px 0px'}}><h5 className="consulttext">Merger & Acquisitions, Valuation Services</h5></a>
               
              </div>
+             </Link>
          </div>
 
            <div className="boxcor col-5 col-sm-2 mb-3" id="c6">
            <img src={require("../../../images/c7.png")}/>
+           <Link to="/consulting/corporate/request-a-proposal">
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '8px 0px'}}><h5 className="consulttext">Corporate Finance & Management Consultancy
                                                        </h5></a>
               
              </div>
+             </Link>
              </div>
            </div>
            <div className="row circle-row1 mobilerow1">
          
 
            <div className=" boxcor col-5 col-sm-2 mb-3 " id="c7">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c8.png")}/>
+           
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
                padding: '8px 0px'}}><h5 className="consulttext">Income Tax / International Taxation Consultancy
                                                        </h5></a>
               
              </div>
-
+             </Link>
            </div>
          
          <div className=" boxcor col-5 col-sm-2 mb-3 " id="c8">
+         <Link to="/consulting/corporate/request-a-proposal">
          <img src={require("../../../images/c9.png")}/>
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
@@ -1024,7 +1037,7 @@ $(function() {
               
              </div>
 
-
+             </Link>
              </div>
              </div>
 
@@ -1245,6 +1258,7 @@ $(function() {
          
 
            <div className=" boxcor col-5 col-sm-2 mb-3" id="c9">
+           <Link  to={{ pathname: '/consulting/corporate/request-a-proposal', state: { productName: 'Services To Non-Residents / NRIs'} }}>
            <img src={require("../../../images/c10.png")}/>
 
              <div className="nav-item dropdown">
@@ -1253,9 +1267,10 @@ $(function() {
                                                                    </h5></a>
               
              </div>
-
+             </Link>
            </div>
            <div className=" boxcor col-5 col-sm-2 mb-3" id="c10">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c11.png")}/>
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
@@ -1263,11 +1278,12 @@ $(function() {
                                                            </h5></a>
             
              </div>
-
+             </Link>
            </div>
            </div>
            <div className="row circle-row1 mobilerow1">
            <div className=" boxcor col-5 col-sm-2 mb-3"  id="c11">
+           <Link to="/consulting/corporate/request-a-proposal">
            <img src={require("../../../images/c12.png")}/>
              <div className="nav-item dropdown">
                <a className="nav-link circle2 " href="javascript:void(0)" id="product-toggle" role="button" data-toggle="dropdown" style={{display: 'block',
@@ -1275,7 +1291,7 @@ $(function() {
                                                                </h5></a>
              
              </div>
-
+</Link>
            </div>
          </div>
          <div className="row drop-box" id="d9">

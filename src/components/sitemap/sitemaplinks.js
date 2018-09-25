@@ -2,18 +2,25 @@ export const sitemap = [
 
     {
         title: "Products",
-        childs: [{
+        childs: [ {
+            
+                            link: "../products/incorporate+",
+                            title: "Incorporate +"
+            
+                        },
+                        {
 
                 link: "../products/comply+",
                 title: "Comply +"
 
             },
             {
-
-                link: "../products/incorporate+",
-                title: "Incorporate +"
-
-            },
+                
+                                link: "../products/tax+",
+                                title: "Tax +"
+                
+                            },
+           
             {
                 
                                 link: "../products/protect+",
@@ -22,12 +29,6 @@ export const sitemap = [
                             },
 
                             {
-                                
-                                                link: "../products/tax+",
-                                                title: "Tax +"
-                                
-                                            },
-                                            {
                                                 
                                                                 link: "../products/windup+",
                                                                 title: "Windup +"
@@ -43,21 +44,22 @@ export const sitemap = [
         childs: [{
 
                 link: "../consultings/corporate+",
-                title: "Corporate +"
-
-            },
-            {
-
-                link: "../consultings/Startup+",
-                title: "Social +"
+                title: "Corporate"
 
             },
             {
                 
                                 link: "../consultings/Startup+",
-                                title: "Startup +"
+                                title: "Startup"
                 
-                            }
+                            },
+            {
+
+                link: "../consultings/Startup+",
+                title: "Social"
+
+            }
+           
                           
 
 
@@ -88,16 +90,11 @@ export const sitemap = [
         title: "Platforms",
         childs: [{
 
-                link: "../trainings/strategic",
-                title: "Strategic Training "
+                link: "../platforms",
+                title: "Opportuneety"
 
             },
-            {
-
-                link: "../trainings/functional",
-                title: "Functional Training"
-
-            }
+           
           
                           
 
